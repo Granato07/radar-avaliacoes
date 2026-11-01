@@ -61,13 +61,30 @@ Matriz de confusão (linhas = real, colunas = previsto):
 | **neutro** | 273 | 256 | 139 |
 | **positivo** | 240 | 431 | 3750 |
 
-**O ponto fraco é o neutro.** Nota 3 mistura elogio com reclamação ("chegou rápido, mas a qualidade é fraca"), e um modelo de palavras não entende esse "mas". É exatamente aí que o LLM deve ajudar, e o script de comparação mede isso.
+**O ponto fraco é o neutro.** Nota 3 mistura elogio com reclamação ("chegou rápido, mas a qualidade é fraca"). A comparação abaixo mostra que boa parte desse erro vem do próprio rótulo.
 
 ## Clássico x LLM
 
-`npm run comparar -- 60` roda a mesma amostra estratificada do teste (20 de cada classe) nos dois modos e salva `ml/comparacao.json` com acurácia, recall do neutro, tempo médio e as categorias encontradas pelo LLM.
+Rodei as duas abordagens, pela API em produção, numa amostra de **60 avaliações do conjunto de teste, 20 de cada classe** (sorteio fixo, `random_state=42`). A amostra é equilibrada de propósito: no teste completo 61% são positivas, o que esconde os erros nas outras classes. Resultado completo em [`ml/comparacao.json`](ml/comparacao.json).
 
-<!-- resultados da comparação entram aqui -->
+| | Modelo clássico | LLM (Groq · gpt-oss-20b) |
+|---|---|---|
+| Acurácia (amostra equilibrada) | 56,7% | **61,7%** |
+| F1 macro | 0,544 | 0,550 |
+| Acerto nos **negativos** | 65% | **95%** |
+| Acerto nos **neutros** | **25%** | 10% |
+| Acerto nos positivos | 80% | 80% |
+| Tempo por avaliação | < 2 ms | 0,4 s (mediana) · 0,9 s (p90) |
+| Categoria, urgência e resposta | não | sim |
+
+**O que os números mostram:**
+
+- **O LLM é muito melhor em achar reclamações** (19 de 20 negativos, contra 13). Para um time de atendimento, esse é o erro que mais custa: uma reclamação classificada como neutra ou positiva não chega em ninguém.
+- **Nenhum dos dois acerta o neutro, e o problema está no rótulo, não no modelo.** O rótulo vem da nota (3 estrelas = neutro), mas o texto de muitas avaliações nota 3 é uma reclamação clara: "Recebi o produto danificado", "Até hoje ainda não recebi minha mercadoria". O LLM chamou 14 dos 20 neutros de negativos e, lendo os textos, na maioria das vezes ele está certo. Ou seja: nota de estrelas é um rótulo ruidoso para sentimento do texto.
+- **Quando os dois discordam (16 casos), o LLM acertou 8, o clássico 5 e nenhum 3.** É por isso que o dashboard avisa quando eles discordam: é o caso que merece revisão humana.
+- **Custo e tempo:** o clássico responde em milissegundos e de graça; o LLM leva ~0,4 s e depende de cota de API.
+
+**Como eu usaria isso em produção:** o modelo clássico como triagem barata em tudo, e o LLM só onde ele agrega (avaliações que não são claramente positivas), para extrair categoria, urgência e rascunho de resposta. O próximo passo para melhorar o clássico seria rerotular uma amostra pelo texto, e não pela nota.
 
 ## Como rodar
 

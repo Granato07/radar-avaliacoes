@@ -1,0 +1,22 @@
+{
+  "data": "2026-11-01",
+  "amostra": "60 avaliações do conjunto de teste, 20 por classe (random_state=42), via API em produção",
+  "llm": { "provedor": "groq", "modelo": "openai/gpt-oss-20b", "respostas_validas": 60 },
+  "acuracia": { "classico": 0.567, "llm": 0.617 },
+  "f1_macro": { "classico": 0.544, "llm": 0.55 },
+  "acerto_por_classe": {
+    "negativo": { "classico": 0.65, "llm": 0.95 },
+    "neutro": { "classico": 0.25, "llm": 0.10 },
+    "positivo": { "classico": 0.80, "llm": 0.80 }
+  },
+  "matriz_confusao": {
+    "ordem": ["negativo", "neutro", "positivo"],
+    "classico": [[13, 5, 2], [10, 5, 5], [3, 1, 16]],
+    "llm": [[19, 1, 0], [14, 2, 4], [2, 2, 16]]
+  },
+  "latencia_llm_ms": { "mediana": 401, "p90": 857, "max": 1838 },
+  "latencia_classico_ms": "< 2",
+  "discordancias": { "total": 16, "acertou_classico": 5, "acertou_llm": 8, "nenhum": 3 },
+  "categorias_llm": { "elogio": 19, "produto_errado": 14, "atraso": 13, "produto_danificado": 8, "qualidade": 3, "outro": 2, "preco": 1 },
+  "urgencia_llm": { "alta": 22, "media": 16, "baixa": 22 }
+}
