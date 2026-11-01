@@ -1,0 +1,30 @@
+{
+  "name": "radar-avaliacoes-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API que analisa avaliações de clientes com um modelo clássico (TF-IDF + regressão logística) e com um LLM (Gemini).",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "comparar": "tsx scripts/comparar.ts"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

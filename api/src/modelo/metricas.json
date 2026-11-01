@@ -1,0 +1,51 @@
+{
+  "dataset": "Olist Brazilian E-Commerce (avaliações com texto)",
+  "amostras_treino": 29062,
+  "amostras_teste": 7266,
+  "acuracia": 0.7886,
+  "f1_macro": 0.6573,
+  "por_classe": {
+    "negativo": {
+      "precision": 0.7707,
+      "recall": 0.7919,
+      "f1-score": 0.7812,
+      "support": 2177.0
+    },
+    "neutro": {
+      "precision": 0.2436,
+      "recall": 0.3832,
+      "f1-score": 0.2978,
+      "support": 668.0
+    },
+    "positivo": {
+      "precision": 0.9427,
+      "recall": 0.8482,
+      "f1-score": 0.893,
+      "support": 4421.0
+    }
+  },
+  "matriz_confusao": {
+    "ordem": [
+      "negativo",
+      "neutro",
+      "positivo"
+    ],
+    "valores": [
+      [
+        1724,
+        364,
+        89
+      ],
+      [
+        273,
+        256,
+        139
+      ],
+      [
+        240,
+        431,
+        3750
+      ]
+    ]
+  }
+}
