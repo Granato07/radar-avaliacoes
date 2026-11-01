@@ -79,3 +79,26 @@ describe('outras rotas', () => {
     expect((await request(app).get('/nada')).status).toBe(404);
   });
 });
+
+describe('LLM com modelos reserva', () => {
+  it('usa o próximo modelo quando o primeiro falha', async () => {
+    process.env.GEMINI_API_KEY = 'chave-de-teste';
+    const ok = { candidates: [{ content: { parts: [{ text: JSON.stringify(llmValido) }] } }] };
+    let chamada = 0;
+    const fetcher = vi.fn(async () => (++chamada === 1 ? new Response('', { status: 503 }) : new Response(JSON.stringify(ok)))) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.status).toBe(200);
+    expect(res.body.llm?.modelo ?? res.body.modelo).toBeDefined();
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  });
+
+  it('timeout vira 504 com mensagem clara', async () => {
+    process.env.GEMINI_API_KEY = 'chave-de-teste';
+    const fetcher = vi.fn(async () => {
+      throw Object.assign(new Error('timeout'), { name: 'TimeoutError' });
+    }) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.status).toBe(504);
+    expect(res.body.erro).toMatch(/demorou/);
+  });
+});

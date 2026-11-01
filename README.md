@@ -31,6 +31,7 @@ Dashboard (v0 / Next.js) ──► API Express + TypeScript
 ```
 
 - **Treino em Python, inferência em TypeScript.** O `treinar.py` exporta vocabulário, IDF e coeficientes para JSON; o `classico.ts` refaz o TF-IDF e a regressão logística em TS. Um teste compara as probabilidades com as do scikit-learn em 200 avaliações reais (diferença máxima < 0,001), então não precisa de servidor Python em produção.
+- **Resiliência.** Se o modelo do Gemini estiver lento (limite de 12 s) ou fora do ar, a API tenta o próximo modelo da lista; a resposta informa qual modelo respondeu.
 - **LLM com contrato.** O Gemini responde em JSON com `responseSchema`, e a API ainda valida tudo com zod. Se vier fora do formato, a API devolve erro em vez de repassar lixo.
 - **Proteção contra prompt injection.** O texto do cliente vai entre `<avaliacao>` e a instrução de sistema manda tratar esse conteúdo só como dado.
 - **Segurança.** A chave do Gemini fica só no servidor (variável de ambiente), CORS com lista de origens permitidas, limite de requisições por IP, corpo limitado a 8 KB e texto validado (3 a 1000 caracteres).
@@ -77,7 +78,7 @@ cd api
 npm install
 cp .env.example .env   # coloque sua GEMINI_API_KEY (Google AI Studio)
 npm run dev            # http://localhost:3333
-npm test               # 11 testes (paridade com Python, validação, LLM simulado, rate limit)
+npm test               # 13 testes (paridade com Python, validação, LLM simulado, modelo reserva, timeout, rate limit)
 ```
 
 ```bash
@@ -100,7 +101,7 @@ O script atualiza `api/src/modelo/`, as métricas e a referência usada no teste
 
 ## Deploy
 
-- **API:** Vercel, com *Root Directory* `api` (Express detectado automaticamente pelo `src/app.ts`). Variáveis: `GEMINI_API_KEY`, `ORIGENS_PERMITIDAS` (URL do dashboard) e, se quiser, `GEMINI_MODEL` e `LIMITE_POR_MINUTO`.
+- **API:** Vercel, com *Root Directory* `api` (Express detectado automaticamente pelo `src/app.ts`). Variáveis: `GEMINI_API_KEY`, `ORIGENS_PERMITIDAS` (URL do dashboard) e, se quiser, `GEMINI_MODEL` (lista de modelos separada por vírgula, tentados em ordem), `GEMINI_TIMEOUT_MS` e `LIMITE_POR_MINUTO`.
 - **Dashboard:** gerado no v0 e publicado na Vercel. Ele só conversa com a API; nenhuma chave fica no navegador.
 
 ## Stack

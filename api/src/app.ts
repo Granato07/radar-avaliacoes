@@ -11,17 +11,19 @@ export const esquemaEntrada = z.object({
 
 // Limite simples por IP para proteger a cota do LLM (em memória, por instância)
 const LIMITE = Number(process.env.LIMITE_POR_MINUTO ?? 20);
-const acessos = new Map<string, number[]>();
-function limitar(req: Request, res: Response, next: NextFunction) {
-  const ip = req.ip ?? 'desconhecido';
-  const agora = Date.now();
-  const recentes = (acessos.get(ip) ?? []).filter((t) => agora - t < 60_000);
-  if (recentes.length >= LIMITE) {
-    res.status(429).json({ erro: 'Muitas requisições. Tente de novo em 1 minuto.' });
-    return;
-  }
-  acessos.set(ip, [...recentes, agora]);
-  next();
+function criarLimitador() {
+  const acessos = new Map<string, number[]>();
+  return (req: Request, res: Response, next: NextFunction) => {
+    const ip = req.ip ?? 'desconhecido';
+    const agora = Date.now();
+    const recentes = (acessos.get(ip) ?? []).filter((t) => agora - t < 60_000);
+    if (recentes.length >= LIMITE) {
+      res.status(429).json({ erro: 'Muitas requisições. Tente de novo em 1 minuto.' });
+      return;
+    }
+    acessos.set(ip, [...recentes, agora]);
+    next();
+  };
 }
 
 export function criarApp(fetcher: typeof fetch = fetch) {
@@ -55,7 +57,7 @@ export function criarApp(fetcher: typeof fetch = fetch) {
     res.json(metricas);
   });
 
-  app.post('/api/analisar', limitar, async (req, res) => {
+  app.post('/api/analisar', criarLimitador(), async (req, res) => {
     const entrada = esquemaEntrada.safeParse(req.body);
     if (!entrada.success) {
       res.status(400).json({ erro: 'Entrada inválida', detalhes: entrada.error.issues.map((i) => i.message) });
