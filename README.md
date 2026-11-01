@@ -1,6 +1,6 @@
 # Radar de Avaliações
 
-Análise de avaliações de clientes de e-commerce com **duas abordagens lado a lado**: um modelo clássico de Machine Learning treinado por mim e um LLM (Google Gemini) com saída estruturada. A API compara as duas no mesmo texto, e o dashboard (feito com **v0**) mostra o resultado.
+Análise de avaliações de clientes de e-commerce com **duas abordagens lado a lado**: um modelo clássico de Machine Learning treinado por mim e um LLM (Groq, com Google Gemini como reserva) com saída estruturada. A API compara as duas no mesmo texto, e o dashboard (feito com **v0**) mostra o resultado.
 
 O objetivo é responder uma pergunta prática: **quando vale pagar por um LLM e quando um modelo pequeno resolve?**
 
@@ -8,7 +8,7 @@ O objetivo é responder uma pergunta prática: **quando vale pagar por um LLM e 
 
 Você manda o texto de uma avaliação e recebe:
 
-| | Modelo clássico | LLM (Gemini) |
+| | Modelo clássico | LLM (Groq / Gemini) |
 |---|---|---|
 | Sentimento (negativo / neutro / positivo) | ✅ com probabilidade | ✅ |
 | Categoria do problema (atraso, produto errado, danificado…) | — | ✅ |
@@ -25,16 +25,16 @@ ml/treinar.py ──► modelo.json (vocabulário, IDF, pesos)
                        │
 Dashboard (v0 / Next.js) ──► API Express + TypeScript
                                 ├─ /api/analisar ─► classificador em TS puro (mesmos números do scikit-learn)
-                                │                └► Gemini (JSON validado com zod)
+                                │                └► LLM: Groq → Gemini (JSON validado com zod)
                                 ├─ /api/metricas
                                 └─ /api/saude
 ```
 
 - **Treino em Python, inferência em TypeScript.** O `treinar.py` exporta vocabulário, IDF e coeficientes para JSON; o `classico.ts` refaz o TF-IDF e a regressão logística em TS. Um teste compara as probabilidades com as do scikit-learn em 200 avaliações reais (diferença máxima < 0,001), então não precisa de servidor Python em produção.
-- **Resiliência.** Se o modelo do Gemini estiver lento (limite de 12 s) ou fora do ar, a API tenta o próximo modelo da lista; a resposta informa qual modelo respondeu.
-- **LLM com contrato.** O Gemini responde em JSON com `responseSchema`, e a API ainda valida tudo com zod. Se vier fora do formato, a API devolve erro em vez de repassar lixo.
+- **Resiliência entre provedores.** A API tenta os modelos do Groq e, se estiverem lentos (limite de 10 s), fora do ar ou sem cota, cai para o Gemini. A resposta informa qual provedor e modelo responderam. Isso nasceu de um problema real: no plano gratuito do Gemini as requisições passaram a dar timeout e 503 por sobrecarga, então o LLM principal virou o Groq e o Gemini ficou de reserva.
+- **LLM com contrato.** O Groq responde com *structured outputs* em modo strict (`json_schema`) e o Gemini com `responseSchema`; mesmo assim a API valida tudo com zod. Se vier fora do formato, a API devolve erro em vez de repassar lixo.
 - **Proteção contra prompt injection.** O texto do cliente vai entre `<avaliacao>` e a instrução de sistema manda tratar esse conteúdo só como dado.
-- **Segurança.** A chave do Gemini fica só no servidor (variável de ambiente), CORS com lista de origens permitidas, limite de requisições por IP, corpo limitado a 8 KB e texto validado (3 a 1000 caracteres).
+- **Segurança.** As chaves dos LLMs ficam só no servidor (variáveis de ambiente), CORS com lista de origens permitidas, limite de requisições por IP, corpo limitado a 8 KB e texto validado (3 a 1000 caracteres).
 
 ## Dados e modelo clássico
 
@@ -76,9 +76,9 @@ Matriz de confusão (linhas = real, colunas = previsto):
 ```bash
 cd api
 npm install
-cp .env.example .env   # coloque sua GEMINI_API_KEY (Google AI Studio)
+cp .env.example .env   # coloque GROQ_API_KEY (console.groq.com) e/ou GEMINI_API_KEY
 npm run dev            # http://localhost:3333
-npm test               # 13 testes (paridade com Python, validação, LLM simulado, modelo reserva, timeout, rate limit)
+npm test               # 16 testes (paridade com Python, validação, LLM simulado, troca de provedor, timeout, rate limit)
 ```
 
 ```bash
@@ -87,7 +87,7 @@ curl -X POST http://localhost:3333/api/analisar \
   -d '{"texto": "Comprei há 20 dias e até agora nada. Ninguém responde.", "modo": "ambos"}'
 ```
 
-`modo` aceita `classico`, `llm` ou `ambos` (padrão). Sem chave do Gemini o modo clássico continua funcionando.
+`modo` aceita `classico`, `llm` ou `ambos` (padrão). Sem chave de LLM o modo clássico continua funcionando.
 
 ### Retreinar o modelo
 
@@ -101,12 +101,12 @@ O script atualiza `api/src/modelo/`, as métricas e a referência usada no teste
 
 ## Deploy
 
-- **API:** Vercel, com *Root Directory* `api` (Express detectado automaticamente pelo `src/app.ts`). Variáveis: `GEMINI_API_KEY`, `ORIGENS_PERMITIDAS` (URL do dashboard) e, se quiser, `GEMINI_MODEL` (lista de modelos separada por vírgula, tentados em ordem), `GEMINI_TIMEOUT_MS` e `LIMITE_POR_MINUTO`.
+- **API:** Vercel, com *Root Directory* `api` (Express detectado automaticamente pelo `src/app.ts`). Variáveis: `GROQ_API_KEY` e/ou `GEMINI_API_KEY`, `ORIGENS_PERMITIDAS` (URL do dashboard) e, se quiser, `GROQ_MODEL` / `GEMINI_MODEL` (listas separadas por vírgula, tentadas em ordem), `LLM_TIMEOUT_MS` e `LIMITE_POR_MINUTO`.
 - **Dashboard:** gerado no v0 e publicado na Vercel. Ele só conversa com a API; nenhuma chave fica no navegador.
 
 ## Stack
 
-Python · scikit-learn · pandas · TypeScript · Node.js · Express 5 · zod · Vitest · Supertest · Google Gemini API · v0 · Next.js · Vercel
+Python · scikit-learn · pandas · TypeScript · Node.js · Express 5 · zod · Vitest · Supertest · Groq API · Google Gemini API · v0 · Next.js · Vercel
 
 ## Autor
 

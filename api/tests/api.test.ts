@@ -17,6 +17,7 @@ const llmValido = {
 
 afterEach(() => {
   delete process.env.GEMINI_API_KEY;
+  delete process.env.GROQ_API_KEY;
 });
 
 describe('POST /api/analisar', () => {
@@ -100,5 +101,44 @@ describe('LLM com modelos reserva', () => {
     const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
     expect(res.status).toBe(504);
     expect(res.body.erro).toMatch(/demorou/);
+  });
+});
+
+describe('Groq como provedor principal', () => {
+  const respostaGroq = (dados: unknown) => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(dados) } }] }));
+
+  it('usa o Groq com schema strict e devolve provedor/modelo', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(async () => respostaGroq(llmValido)) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.status).toBe(200);
+    expect(res.body.llm.provedor).toBe('groq');
+    expect(res.body.llm.modelo).toBe('openai/gpt-oss-20b');
+    const [url, init] = (fetcher as unknown as { mock: { calls: [string, RequestInit][] } }).mock.calls[0];
+    expect(url).toContain('api.groq.com');
+    const corpo = JSON.parse(init.body as string);
+    expect(corpo.response_format.json_schema.strict).toBe(true);
+    expect((init.headers as Record<string, string>).Authorization).toBe('Bearer chave-groq');
+  });
+
+  it('cai para o Gemini quando o Groq falha', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    process.env.GEMINI_API_KEY = 'chave-gemini';
+    const fetcher = vi.fn(async (url: string) =>
+      url.includes('groq')
+        ? new Response('', { status: 503 })
+        : new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(llmValido) }] } }] })),
+    ) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.status).toBe(200);
+    expect(res.body.llm.provedor).toBe('gemini');
+  });
+
+  it('chave inválida pula os outros modelos do mesmo provedor', async () => {
+    process.env.GROQ_API_KEY = 'chave-errada';
+    const fetcher = vi.fn(async () => new Response('', { status: 401 })) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.status).toBe(502);
+    expect(fetcher).toHaveBeenCalledOnce();
   });
 });

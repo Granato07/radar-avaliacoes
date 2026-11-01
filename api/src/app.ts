@@ -1,7 +1,7 @@
 import express, { type NextFunction, type Request, type Response } from 'express';
 import { z } from 'zod';
 import { classificar } from './classico.js';
-import { analisarComLLM, ErroLLM } from './llm.js';
+import { analisarComLLM, ErroLLM, llmConfigurado } from './llm.js';
 import metricas from './modelo/metricas.json' with { type: 'json' };
 
 export const esquemaEntrada = z.object({
@@ -50,7 +50,7 @@ export function criarApp(fetcher: typeof fetch = fetch) {
   });
 
   app.get('/api/saude', (_req, res) => {
-    res.json({ ok: true, llm_configurado: Boolean(process.env.GEMINI_API_KEY) });
+    res.json({ ok: true, llm_configurado: llmConfigurado() });
   });
 
   app.get('/api/metricas', (_req, res) => {

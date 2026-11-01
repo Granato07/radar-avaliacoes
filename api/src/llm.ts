@@ -1,5 +1,5 @@
-// Análise com LLM (Gemini) usando saída estruturada em JSON.
-// A chave fica só no servidor (variável GEMINI_API_KEY) e nunca vai para o navegador.
+// Análise com LLM (Groq e/ou Gemini) usando saída estruturada em JSON.
+// As chaves ficam só no servidor (variáveis de ambiente) e nunca vão para o navegador.
 import { z } from 'zod';
 
 export const CATEGORIAS = ['atraso', 'produto_errado', 'produto_danificado', 'qualidade', 'atendimento', 'preco', 'elogio', 'outro'] as const;
@@ -44,22 +44,113 @@ export class ErroLLM extends Error {
   }
 }
 
-// Modelos tentados em ordem. Se um estiver lento, fora do ar ou sem cota, a API tenta o próximo.
-// GEMINI_MODEL aceita uma lista separada por vírgula para trocar sem mexer no código.
-export function modelosConfigurados(): string[] {
-  const lista = (process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite,gemini-flash-lite-latest,gemini-flash-latest')
-    .split(',')
-    .map((m) => m.trim())
-    .filter(Boolean);
-  return [...new Set(lista)];
+// ---------------------------------------------------------------------------
+// Provedores e modelos tentados em ordem. Se um estiver lento, fora do ar ou sem
+// cota, a API tenta o próximo. Só entram provedores com chave configurada.
+//   GROQ_API_KEY   + GROQ_MODEL   (lista separada por vírgula)
+//   GEMINI_API_KEY + GEMINI_MODEL (lista separada por vírgula)
+// ---------------------------------------------------------------------------
+type Provedor = 'groq' | 'gemini';
+interface Tentativa {
+  provedor: Provedor;
+  modelo: string;
+  chave: string;
 }
 
-const TEMPO_LIMITE_MS = Number(process.env.GEMINI_TIMEOUT_MS ?? 12_000);
+const lista = (valor: string | undefined, padrao: string) =>
+  [...new Set((valor || padrao).split(',').map((m) => m.trim()).filter(Boolean))];
 
-async function chamarModelo(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM> {
+export function tentativasConfiguradas(): Tentativa[] {
+  const tentativas: Tentativa[] = [];
+  const groq = process.env.GROQ_API_KEY;
+  const gemini = process.env.GEMINI_API_KEY;
+  if (groq) for (const modelo of lista(process.env.GROQ_MODEL, 'openai/gpt-oss-20b,openai/gpt-oss-120b')) tentativas.push({ provedor: 'groq', modelo, chave: groq });
+  if (gemini) for (const modelo of lista(process.env.GEMINI_MODEL, 'gemini-3.5-flash-lite,gemini-flash-latest')) tentativas.push({ provedor: 'gemini', modelo, chave: gemini });
+  return tentativas;
+}
+
+export const llmConfigurado = () => Boolean(process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY);
+
+const TEMPO_LIMITE_MS = Number(process.env.LLM_TIMEOUT_MS ?? 10_000);
+
+// Esquema JSON padrão (formato OpenAI/Groq, modo strict)
+const esquemaJson = {
+  type: 'object',
+  properties: {
+    sentimento: { type: 'string', enum: ['negativo', 'neutro', 'positivo'] },
+    categoria: { type: 'string', enum: [...CATEGORIAS] },
+    urgencia: { type: 'string', enum: ['baixa', 'media', 'alta'] },
+    resumo: { type: 'string', description: 'Resumo da avaliação em até 20 palavras' },
+    resposta_sugerida: { type: 'string', description: 'Resposta educada da empresa ao cliente, em até 3 frases' },
+  },
+  required: ['sentimento', 'categoria', 'urgencia', 'resumo', 'resposta_sugerida'],
+  additionalProperties: false,
+};
+
+async function requisitar(url: string, init: RequestInit, fetcher: typeof fetch, nome: string): Promise<Response> {
   let resposta: Response;
   try {
-    resposta = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`, {
+    resposta = await fetcher(url, { ...init, signal: AbortSignal.timeout(TEMPO_LIMITE_MS) });
+  } catch (e) {
+    const tipo = (e as Error).name;
+    if (tipo === 'TimeoutError' || tipo === 'AbortError') throw new ErroLLM(`O ${nome} demorou demais para responder`, 504);
+    throw new ErroLLM(`Não foi possível conectar ao ${nome}`);
+  }
+  if (resposta.status === 429) throw new ErroLLM(`Limite de uso do ${nome} atingido`, 429);
+  if (resposta.status === 401 || resposta.status === 403) throw new ErroLLM(`Chave do ${nome} inválida ou sem permissão`, 502);
+  if (!resposta.ok) throw new ErroLLM(`${nome} respondeu ${resposta.status}`);
+  return resposta;
+}
+
+function validar(texto: string | undefined, nome: string): ResultadoLLM {
+  if (!texto) throw new ErroLLM(`Resposta vazia do ${nome}`);
+  let dados: unknown;
+  try {
+    dados = JSON.parse(texto);
+  } catch {
+    throw new ErroLLM(`Resposta do ${nome} fora do formato esperado`);
+  }
+  const validado = esquemaLLM.safeParse(dados);
+  if (!validado.success) throw new ErroLLM(`Resposta do ${nome} fora do formato esperado`);
+  return validado.data;
+}
+
+async function chamarGroq(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM> {
+  const suportaSchema = modelo.startsWith('openai/gpt-oss') || modelo.startsWith('qwen/');
+  const resposta = await requisitar(
+    'https://api.groq.com/openai/v1/chat/completions',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${chave}` },
+      body: JSON.stringify({
+        model: modelo,
+        temperature: 0.2,
+        ...(modelo.startsWith('openai/gpt-oss') ? { reasoning_effort: 'low' } : {}),
+        response_format: suportaSchema
+          ? { type: 'json_schema', json_schema: { name: 'analise_avaliacao', strict: true, schema: esquemaJson } }
+          : { type: 'json_object' },
+        messages: [
+          {
+            role: 'system',
+            content: suportaSchema
+              ? INSTRUCOES
+              : `${INSTRUCOES}\nResponda só com um JSON com as chaves sentimento, categoria (${CATEGORIAS.join(', ')}), urgencia, resumo e resposta_sugerida.`,
+          },
+          { role: 'user', content: `<avaliacao>${texto}</avaliacao>` },
+        ],
+      }),
+    },
+    fetcher,
+    'Groq',
+  );
+  const corpo = (await resposta.json()) as { choices?: { message?: { content?: string } }[] };
+  return validar(corpo.choices?.[0]?.message?.content, 'Groq');
+}
+
+async function chamarGemini(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM> {
+  const resposta = await requisitar(
+    `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`,
+    {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': chave },
       body: JSON.stringify({
@@ -67,49 +158,32 @@ async function chamarModelo(modelo: string, chave: string, texto: string, fetche
         contents: [{ role: 'user', parts: [{ text: `<avaliacao>${texto}</avaliacao>` }] }],
         generationConfig: { temperature: 0.2, responseMimeType: 'application/json', responseSchema: esquemaGemini },
       }),
-      signal: AbortSignal.timeout(TEMPO_LIMITE_MS),
-    });
-  } catch (e) {
-    const nome = (e as Error).name;
-    if (nome === 'TimeoutError' || nome === 'AbortError') throw new ErroLLM('O Gemini demorou demais para responder', 504);
-    throw new ErroLLM('Não foi possível conectar ao Gemini');
-  }
-
-  if (resposta.status === 429) throw new ErroLLM('Limite de uso do Gemini atingido', 429);
-  if (resposta.status === 401 || resposta.status === 403) throw new ErroLLM('Chave do Gemini inválida ou sem permissão', 502);
-  if (!resposta.ok) throw new ErroLLM(`Gemini respondeu ${resposta.status}`);
-
+    },
+    fetcher,
+    'Gemini',
+  );
   const corpo = (await resposta.json()) as { candidates?: { content?: { parts?: { text?: string }[] } }[] };
-  const json = corpo.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!json) throw new ErroLLM('Resposta vazia do Gemini');
-
-  let dados: unknown;
-  try {
-    dados = JSON.parse(json);
-  } catch {
-    throw new ErroLLM('Resposta do Gemini fora do formato esperado');
-  }
-  const validado = esquemaLLM.safeParse(dados);
-  if (!validado.success) throw new ErroLLM('Resposta do Gemini fora do formato esperado');
-  return validado.data;
+  return validar(corpo.candidates?.[0]?.content?.parts?.[0]?.text, 'Gemini');
 }
 
 export async function analisarComLLM(
   texto: string,
   fetcher: typeof fetch = fetch,
-): Promise<ResultadoLLM & { modelo: string }> {
-  const chave = process.env.GEMINI_API_KEY;
-  if (!chave) throw new ErroLLM('GEMINI_API_KEY não configurada', 503);
+): Promise<ResultadoLLM & { provedor: Provedor; modelo: string }> {
+  const tentativas = tentativasConfiguradas();
+  if (tentativas.length === 0) throw new ErroLLM('Nenhuma chave de LLM configurada (GROQ_API_KEY ou GEMINI_API_KEY)', 503);
 
   let ultimoErro = new ErroLLM('Falha ao consultar o LLM');
-  for (const modelo of modelosConfigurados()) {
+  const chavesInvalidas = new Set<Provedor>();
+  for (const { provedor, modelo, chave } of tentativas) {
+    if (chavesInvalidas.has(provedor)) continue;
     try {
-      return { ...(await chamarModelo(modelo, chave, texto, fetcher)), modelo };
+      const chamar = provedor === 'groq' ? chamarGroq : chamarGemini;
+      return { ...(await chamar(modelo, chave, texto, fetcher)), provedor, modelo };
     } catch (e) {
       ultimoErro = e instanceof ErroLLM ? e : new ErroLLM('Falha ao consultar o LLM');
-      // chave errada não melhora trocando de modelo
-      if (ultimoErro.message.startsWith('Chave do Gemini')) break;
-      console.warn(`[llm] ${modelo}: ${ultimoErro.message}`);
+      if (ultimoErro.message.startsWith('Chave do')) chavesInvalidas.add(provedor);
+      console.warn(`[llm] ${provedor}/${modelo}: ${ultimoErro.message}`);
     }
   }
   throw ultimoErro;
