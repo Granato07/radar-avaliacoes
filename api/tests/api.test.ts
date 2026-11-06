@@ -142,3 +142,54 @@ describe('Groq como provedor principal', () => {
     expect(fetcher).toHaveBeenCalledOnce();
   });
 });
+
+describe('tokens, custo, escolha de modelo e triagem', () => {
+  const groqComUso = (dados: unknown) =>
+    new Response(
+      JSON.stringify({ choices: [{ message: { content: JSON.stringify(dados) } }], usage: { prompt_tokens: 400, completion_tokens: 100 } }),
+    );
+
+  it('devolve tokens e custo calculado pela tabela de preços', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(async () => groqComUso(llmValido)) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm' });
+    expect(res.body.llm.uso).toEqual({ tokens_entrada: 400, tokens_saida: 100, custo_usd: 0.00006 }); // 400*0,075 + 100*0,30 por milhão
+  });
+
+  it('modelo escolhido é usado sozinho, sem cair para outro', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(async () => new Response('', { status: 503 })) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher))
+      .post('/api/analisar')
+      .send({ texto: 'Não chegou ainda', modo: 'llm', modelo: 'openai/gpt-oss-120b' });
+    expect(res.status).toBe(502);
+    expect(fetcher).toHaveBeenCalledOnce();
+    const corpo = JSON.parse((fetcher as unknown as { mock: { calls: [string, RequestInit][] } }).mock.calls[0][1].body as string);
+    expect(corpo.model).toBe('openai/gpt-oss-120b');
+  });
+
+  it('recusa modelo que não está configurado (400)', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const res = await request(criarApp()).post('/api/analisar').send({ texto: 'Não chegou ainda', modo: 'llm', modelo: 'modelo-caro' });
+    expect(res.status).toBe(400);
+  });
+
+  it('triagem: elogio claro não chama o LLM', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(async () => groqComUso(llmValido)) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher))
+      .post('/api/analisar')
+      .send({ texto: 'Excelente produto, chegou antes do prazo. Recomendo!', modo: 'triagem' });
+    expect(res.body.triagem.llm_acionado).toBe(false);
+    expect(res.body.llm).toBeUndefined();
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+
+  it('triagem: reclamação vai para o LLM', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(async () => groqComUso(llmValido)) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Paguei e não recebi o produto', modo: 'triagem' });
+    expect(res.body.triagem.llm_acionado).toBe(true);
+    expect(res.body.llm.categoria).toBe('atraso');
+  });
+});
