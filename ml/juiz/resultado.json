@@ -1,0 +1,292 @@
+{
+ "amostra": "150 avaliações (50 por classe de estrela, random_state=7)",
+ "juiz": "Claude Opus 5.5, leitura cega do texto (rubrica.md)",
+ "validacao_humana": {
+  "n": 40,
+  "concordancia_humano_juiz": 1.0,
+  "kappa_humano_juiz": 1.0,
+  "concordancia_humano_estrela": 0.725,
+  "limite_inferior_95": 0.912,
+  "observacao": "40 de 40; só 4 dos 40 eram casos que o juiz marcou como ambíguos"
+ },
+ "distribuicao_real_triagem": {
+  "avaliacoes": 7266,
+  "llm_evitado": 0.416,
+  "limiar": 0.8,
+  "nota_1_2_puladas": 12,
+  "dessas_reclamacoes_reais": 0
+ },
+ "estrela_x_juiz": {
+  "negativo": {
+   "negativo": 47,
+   "neutro": 29,
+   "positivo": 3
+  },
+  "neutro": {
+   "negativo": 3,
+   "neutro": 16,
+   "positivo": 5
+  },
+  "positivo": {
+   "negativo": 0,
+   "neutro": 5,
+   "positivo": 42
+  }
+ },
+ "contra_juiz": {
+  "estrela": {
+   "acuracia": 0.7,
+   "f1_macro": 0.676,
+   "kappa": 0.55,
+   "acerto_negativos": 0.595,
+   "acerto_neutros": 0.667,
+   "acerto_positivos": 0.894
+  },
+  "classico": {
+   "acuracia": 0.74,
+   "f1_macro": 0.707,
+   "kappa": 0.598,
+   "acerto_negativos": 0.671,
+   "acerto_neutros": 0.667,
+   "acerto_positivos": 0.894
+  },
+  "llm_20b": {
+   "acuracia": 0.887,
+   "f1_macro": 0.813,
+   "kappa": 0.805,
+   "acerto_negativos": 0.962,
+   "acerto_neutros": 0.458,
+   "acerto_positivos": 0.979
+  },
+  "llm_120b": {
+   "acuracia": 0.893,
+   "f1_macro": 0.828,
+   "kappa": 0.814,
+   "acerto_negativos": 0.962,
+   "acerto_neutros": 0.458,
+   "acerto_positivos": 1.0
+  }
+ },
+ "contra_juiz_so_confianca_alta": {
+  "n": 126,
+  "estrela": {
+   "acuracia": 0.738,
+   "f1_macro": 0.664,
+   "kappa": 0.593,
+   "acerto_negativos": 0.625,
+   "acerto_neutros": 0.778,
+   "acerto_positivos": 0.911
+  },
+  "classico": {
+   "acuracia": 0.794,
+   "f1_macro": 0.719,
+   "kappa": 0.665,
+   "acerto_negativos": 0.708,
+   "acerto_neutros": 0.889,
+   "acerto_positivos": 0.911
+  },
+  "llm_20b": {
+   "acuracia": 0.976,
+   "f1_macro": 0.93,
+   "kappa": 0.956,
+   "acerto_negativos": 1.0,
+   "acerto_neutros": 0.778,
+   "acerto_positivos": 0.978
+  },
+  "llm_120b": {
+   "acuracia": 0.968,
+   "f1_macro": 0.896,
+   "kappa": 0.94,
+   "acerto_negativos": 1.0,
+   "acerto_neutros": 0.556,
+   "acerto_positivos": 1.0
+  }
+ },
+ "contra_estrela": {
+  "classico": {
+   "acuracia": 0.66,
+   "f1_macro": 0.653,
+   "kappa": 0.49,
+   "acerto_negativos": 0.72,
+   "acerto_neutros": 0.44,
+   "acerto_positivos": 0.82
+  },
+  "llm_20b": {
+   "acuracia": 0.673,
+   "f1_macro": 0.628,
+   "kappa": 0.51,
+   "acerto_negativos": 0.98,
+   "acerto_neutros": 0.22,
+   "acerto_positivos": 0.82
+  },
+  "llm_120b": {
+   "acuracia": 0.673,
+   "f1_macro": 0.628,
+   "kappa": 0.51,
+   "acerto_negativos": 0.98,
+   "acerto_neutros": 0.2,
+   "acerto_positivos": 0.84
+  }
+ },
+ "custo_e_tempo": {
+  "llm_20b": {
+   "tokens_entrada_medio": 413.8,
+   "tokens_saida_medio": 125.7,
+   "custo_por_chamada_usd": 6.876e-05,
+   "custo_usd_por_escala": {
+    "1000": 0.07,
+    "100000": 6.88,
+    "1000000": 68.76
+   },
+   "tempo_ms_mediana": 478,
+   "tempo_ms_p90": 843
+  },
+  "llm_120b": {
+   "tokens_entrada_medio": 413.8,
+   "tokens_saida_medio": 157.2,
+   "custo_por_chamada_usd": 0.00015639,
+   "custo_usd_por_escala": {
+    "1000": 0.16,
+    "100000": 15.64,
+    "1000000": 156.39
+   },
+   "tempo_ms_mediana": 604,
+   "tempo_ms_p90": 827
+  }
+ },
+ "custo_estimado_juiz_claude": {
+  "claude-haiku-5-5": {
+   "por_avaliacao_usd": 7.1e-05,
+   "amostra_150_usd": 0.011,
+   "por_1_milhao_usd": 71.0
+  },
+  "claude-sonnet-5-5": {
+   "por_avaliacao_usd": 0.001428,
+   "amostra_150_usd": 0.214,
+   "por_1_milhao_usd": 1428.0
+  },
+  "claude-opus-5-5": {
+   "por_avaliacao_usd": 0.002855,
+   "amostra_150_usd": 0.428,
+   "por_1_milhao_usd": 2855.0
+  }
+ },
+ "triagem": [
+  {
+   "limiar": 0.5,
+   "llm_evitado": 0.313,
+   "acuracia": 0.88,
+   "acerto_negativos": 0.949,
+   "reclamacoes_perdidas": 1,
+   "custo_por_milhao_usd": 47.22
+  },
+  {
+   "limiar": 0.6,
+   "llm_evitado": 0.293,
+   "acuracia": 0.88,
+   "acerto_negativos": 0.949,
+   "reclamacoes_perdidas": 1,
+   "custo_por_milhao_usd": 48.59
+  },
+  {
+   "limiar": 0.7,
+   "llm_evitado": 0.287,
+   "acuracia": 0.88,
+   "acerto_negativos": 0.949,
+   "reclamacoes_perdidas": 1,
+   "custo_por_milhao_usd": 49.05
+  },
+  {
+   "limiar": 0.8,
+   "llm_evitado": 0.253,
+   "acuracia": 0.893,
+   "acerto_negativos": 0.962,
+   "reclamacoes_perdidas": 0,
+   "custo_por_milhao_usd": 51.34
+  },
+  {
+   "limiar": 0.85,
+   "llm_evitado": 0.24,
+   "acuracia": 0.893,
+   "acerto_negativos": 0.962,
+   "reclamacoes_perdidas": 0,
+   "custo_por_milhao_usd": 52.26
+  },
+  {
+   "limiar": 0.9,
+   "llm_evitado": 0.213,
+   "acuracia": 0.893,
+   "acerto_negativos": 0.962,
+   "reclamacoes_perdidas": 0,
+   "custo_por_milhao_usd": 54.09
+  },
+  {
+   "limiar": 0.95,
+   "llm_evitado": 0.16,
+   "acuracia": 0.887,
+   "acerto_negativos": 0.962,
+   "reclamacoes_perdidas": 0,
+   "custo_por_milhao_usd": 57.76
+  }
+ ],
+ "prompt_v2": {
+  "n": 150,
+  "v1": {
+   "acuracia": 0.887,
+   "f1_macro": 0.813,
+   "kappa": 0.805,
+   "acerto_negativos": 0.962,
+   "acerto_neutros": 0.458,
+   "acerto_positivos": 0.979
+  },
+  "v2": {
+   "acuracia": 0.933,
+   "f1_macro": 0.905,
+   "kappa": 0.887,
+   "acerto_negativos": 0.962,
+   "acerto_neutros": 0.75,
+   "acerto_positivos": 0.979
+  },
+  "v2_contra_juiz_confianca_alta": {
+   "acuracia": 0.992,
+   "f1_macro": 0.979,
+   "kappa": 0.985,
+   "acerto_negativos": 1.0,
+   "acerto_neutros": 1.0,
+   "acerto_positivos": 0.978
+  },
+  "tokens_entrada_medio": 570.8,
+  "tokens_saida_medio": 124.5,
+  "custo_por_milhao_usd": 80.15,
+  "mudou": 11,
+  "triagem_0_8_com_v2": {
+   "acuracia": 0.92,
+   "acerto_negativos": 0.962,
+   "reclamacoes_perdidas": 0,
+   "custo_por_milhao_usd_amostra": 59.85,
+   "custo_por_milhao_usd_distribuicao_real": 46.81
+  }
+ },
+ "precos_usd_por_milhao": {
+  "openai/gpt-oss-20b": {
+   "entrada": 0.075,
+   "saida": 0.3
+  },
+  "openai/gpt-oss-120b": {
+   "entrada": 0.15,
+   "saida": 0.6
+  },
+  "claude-haiku-5-5": {
+   "entrada": 0.1,
+   "saida": 0.5
+  },
+  "claude-sonnet-5-5": {
+   "entrada": 2,
+   "saida": 10
+  },
+  "claude-opus-5-5": {
+   "entrada": 4,
+   "saida": 20
+  }
+ }
+}

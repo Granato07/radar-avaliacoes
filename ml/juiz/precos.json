@@ -1,0 +1,7 @@
+{
+ "openai/gpt-oss-20b": {"entrada": 0.075, "saida": 0.3},
+ "openai/gpt-oss-120b": {"entrada": 0.15, "saida": 0.6},
+ "claude-haiku-5-5": {"entrada": 0.1, "saida": 0.5},
+ "claude-sonnet-5-5": {"entrada": 2, "saida": 10},
+ "claude-opus-5-5": {"entrada": 4, "saida": 20}
+}
