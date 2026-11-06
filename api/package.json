@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "API que analisa avaliações de clientes com um modelo clássico (TF-IDF + regressão logística) e com um LLM (Gemini).",
+  "description": "API que analisa avaliações de clientes com um modelo clássico (TF-IDF + regressão logística) e com um LLM (Groq, com Gemini de reserva).",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "tsx src/server.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "comparar": "tsx scripts/comparar.ts"
+    "coletar": "tsx scripts/coletar.ts"
   },
   "dependencies": {
     "express": "^5.3.0",
