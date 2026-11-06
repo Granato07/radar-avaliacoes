@@ -1,13 +1,19 @@
 import express, { type NextFunction, type Request, type Response } from 'express';
 import { z } from 'zod';
 import { classificar } from './classico.js';
-import { analisarComLLM, ErroLLM, llmConfigurado } from './llm.js';
+import { analisarComLLM, ErroLLM, llmConfigurado, modelosDisponiveis } from './llm.js';
 import metricas from './modelo/metricas.json' with { type: 'json' };
 
 export const esquemaEntrada = z.object({
   texto: z.string().trim().min(3, 'texto muito curto').max(1000, 'texto muito longo (máx. 1000 caracteres)'),
-  modo: z.enum(['classico', 'llm', 'ambos']).default('ambos'),
+  modo: z.enum(['classico', 'llm', 'ambos', 'triagem']).default('ambos'),
+  modelo: z.string().max(80).optional(),
 });
+
+// Triagem: o modelo clássico decide sozinho quando está muito confiante de que a avaliação é positiva
+// (elogio não precisa de categoria, urgência nem resposta). O resto vai para o LLM.
+// O limiar saiu da avaliação em ml/juiz (ver README).
+const LIMIAR_TRIAGEM = Number(process.env.LIMIAR_TRIAGEM ?? 0.8);
 
 // Limite simples por IP para proteger a cota do LLM (em memória, por instância)
 const LIMITE = Number(process.env.LIMITE_POR_MINUTO ?? 20);
@@ -50,7 +56,7 @@ export function criarApp(fetcher: typeof fetch = fetch) {
   });
 
   app.get('/api/saude', (_req, res) => {
-    res.json({ ok: true, llm_configurado: llmConfigurado() });
+    res.json({ ok: true, llm_configurado: llmConfigurado(), modelos: modelosDisponiveis(), limiar_triagem: LIMIAR_TRIAGEM });
   });
 
   app.get('/api/metricas', (_req, res) => {
@@ -63,17 +69,33 @@ export function criarApp(fetcher: typeof fetch = fetch) {
       res.status(400).json({ erro: 'Entrada inválida', detalhes: entrada.error.issues.map((i) => i.message) });
       return;
     }
-    const { texto, modo } = entrada.data;
+    const { texto, modo, modelo } = entrada.data;
     const resposta: Record<string, unknown> = { texto };
 
+    let classico: ReturnType<typeof classificar> | undefined;
     if (modo !== 'llm') {
       const inicio = performance.now();
-      resposta.classico = { ...classificar(texto), tempo_ms: Math.round(performance.now() - inicio) };
+      classico = classificar(texto);
+      resposta.classico = { ...classico, tempo_ms: Math.round(performance.now() - inicio) };
     }
-    if (modo !== 'classico') {
+
+    let chamarLLM = modo !== 'classico';
+    if (modo === 'triagem' && classico) {
+      const confiantePositivo = classico.sentimento === 'positivo' && classico.confianca >= LIMIAR_TRIAGEM;
+      chamarLLM = !confiantePositivo;
+      resposta.triagem = {
+        llm_acionado: chamarLLM,
+        limiar: LIMIAR_TRIAGEM,
+        motivo: confiantePositivo
+          ? 'modelo clássico confiante de que é positiva: LLM não foi chamado'
+          : 'não é positiva com confiança: LLM chamado para categoria, urgência e resposta',
+      };
+    }
+
+    if (chamarLLM) {
       const inicio = performance.now();
       try {
-        resposta.llm = { ...(await analisarComLLM(texto, fetcher)), tempo_ms: Math.round(performance.now() - inicio) };
+        resposta.llm = { ...(await analisarComLLM(texto, fetcher, modelo)), tempo_ms: Math.round(performance.now() - inicio) };
       } catch (e) {
         const erro = e instanceof ErroLLM ? e : new ErroLLM('Falha ao consultar o LLM');
         if (modo === 'llm') {

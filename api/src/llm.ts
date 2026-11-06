@@ -1,6 +1,7 @@
 // Análise com LLM (Groq e/ou Gemini) usando saída estruturada em JSON.
 // As chaves ficam só no servidor (variáveis de ambiente) e nunca vão para o navegador.
 import { z } from 'zod';
+import { calcularUso, type Uso } from './precos.js';
 
 export const CATEGORIAS = ['atraso', 'produto_errado', 'produto_danificado', 'qualidade', 'atendimento', 'preco', 'elogio', 'outro'] as const;
 
@@ -115,7 +116,7 @@ function validar(texto: string | undefined, nome: string): ResultadoLLM {
   return validado.data;
 }
 
-async function chamarGroq(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM> {
+async function chamarGroq(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM & { uso: Uso }> {
   const suportaSchema = modelo.startsWith('openai/gpt-oss') || modelo.startsWith('qwen/');
   const resposta = await requisitar(
     'https://api.groq.com/openai/v1/chat/completions',
@@ -143,11 +144,17 @@ async function chamarGroq(modelo: string, chave: string, texto: string, fetcher:
     fetcher,
     'Groq',
   );
-  const corpo = (await resposta.json()) as { choices?: { message?: { content?: string } }[] };
-  return validar(corpo.choices?.[0]?.message?.content, 'Groq');
+  const corpo = (await resposta.json()) as {
+    choices?: { message?: { content?: string } }[];
+    usage?: { prompt_tokens?: number; completion_tokens?: number };
+  };
+  return {
+    ...validar(corpo.choices?.[0]?.message?.content, 'Groq'),
+    uso: calcularUso(modelo, corpo.usage?.prompt_tokens ?? 0, corpo.usage?.completion_tokens ?? 0),
+  };
 }
 
-async function chamarGemini(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM> {
+async function chamarGemini(modelo: string, chave: string, texto: string, fetcher: typeof fetch): Promise<ResultadoLLM & { uso: Uso }> {
   const resposta = await requisitar(
     `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`,
     {
@@ -162,16 +169,32 @@ async function chamarGemini(modelo: string, chave: string, texto: string, fetche
     fetcher,
     'Gemini',
   );
-  const corpo = (await resposta.json()) as { candidates?: { content?: { parts?: { text?: string }[] } }[] };
-  return validar(corpo.candidates?.[0]?.content?.parts?.[0]?.text, 'Gemini');
+  const corpo = (await resposta.json()) as {
+    candidates?: { content?: { parts?: { text?: string }[] } }[];
+    usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number; thoughtsTokenCount?: number };
+  };
+  const meta = corpo.usageMetadata;
+  return {
+    ...validar(corpo.candidates?.[0]?.content?.parts?.[0]?.text, 'Gemini'),
+    uso: calcularUso(modelo, meta?.promptTokenCount ?? 0, (meta?.candidatesTokenCount ?? 0) + (meta?.thoughtsTokenCount ?? 0)),
+  };
 }
 
+export const modelosDisponiveis = () => tentativasConfiguradas().map((t) => t.modelo);
+
+// modeloEscolhido: usa só aquele modelo, sem cair para outro (serve para comparar modelos).
+// Só aceita modelos já configurados no servidor, então ninguém consegue usar um modelo caro por fora.
 export async function analisarComLLM(
   texto: string,
   fetcher: typeof fetch = fetch,
-): Promise<ResultadoLLM & { provedor: Provedor; modelo: string }> {
-  const tentativas = tentativasConfiguradas();
+  modeloEscolhido?: string,
+): Promise<ResultadoLLM & { provedor: Provedor; modelo: string; uso: Uso }> {
+  let tentativas = tentativasConfiguradas();
   if (tentativas.length === 0) throw new ErroLLM('Nenhuma chave de LLM configurada (GROQ_API_KEY ou GEMINI_API_KEY)', 503);
+  if (modeloEscolhido) {
+    tentativas = tentativas.filter((t) => t.modelo === modeloEscolhido);
+    if (tentativas.length === 0) throw new ErroLLM(`Modelo não disponível: ${modeloEscolhido}`, 400);
+  }
 
   let ultimoErro = new ErroLLM('Falha ao consultar o LLM');
   const chavesInvalidas = new Set<Provedor>();
