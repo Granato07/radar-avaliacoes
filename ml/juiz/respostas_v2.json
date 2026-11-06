@@ -1,0 +1,3152 @@
+[
+ {
+  "id": 1,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com produto e prazo.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tenha gostado do produto e do prazo de entrega.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 97,
+    "custo_usd": 0.0000711
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 261
+  }
+ },
+ {
+  "id": 2,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "outro",
+   "urgencia": "baixa",
+   "resumo": "Cliente sugere melhorar prazo de entrega no Espírito Santo.",
+   "resposta_sugerida": "Agradecemos sua sugestão e vamos avaliar melhorias no prazo de entrega na região.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 127,
+    "custo_usd": 0.0000801
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 294
+  }
+ },
+ {
+  "id": 3,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu produto desde março, já tentou contato sem sucesso.",
+   "resposta_sugerida": "Olá! Sentimos muito pela demora e pela falta de retorno. Estamos verificando o status do seu pedido e entraremos em contato em breve para esclarecer a situação.",
+   "uso": {
+    "tokens_entrada": 627,
+    "tokens_saida": 102,
+    "custo_usd": 0.00007763
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 405
+  }
+ },
+ {
+  "id": 4,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Cartucho preto veio violado, outros lacrados.",
+   "resposta_sugerida": "Lamentamos o ocorrido. Por favor, envie uma foto do cartucho danificado para que possamos avaliar a situação e encontrar a melhor solução.",
+   "uso": {
+    "tokens_entrada": 567,
+    "tokens_saida": 143,
+    "custo_usd": 0.00008543
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 415
+  }
+ },
+ {
+  "id": 5,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e satisfatória",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que a entrega tenha sido rápida e atendeu às suas expectativas.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 99,
+    "custo_usd": 0.00007155
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 379
+  }
+ },
+ {
+  "id": 6,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente recebeu camiseta tamanho P, mas acreditou ser tamanho único devido à falta de informação.",
+   "resposta_sugerida": "Lamentamos a confusão causada pela falta de detalhes sobre o tamanho. Podemos enviar a camiseta correta ou orientar sobre a troca. Por favor, nos informe a sua preferência para que possamos resolver rapidamente.",
+   "uso": {
+    "tokens_entrada": 590,
+    "tokens_saida": 154,
+    "custo_usd": 0.00009045
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 501
+  }
+ },
+ {
+  "id": 7,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu pedido incompleto, falta cartucho HP 92, solicita entrega urgente.",
+   "resposta_sugerida": "Olá! Sentimos muito pelo transtorno. Vamos providenciar a entrega do cartucho HP 92 o mais rápido possível e manteremos você informado sobre o status.",
+   "uso": {
+    "tokens_entrada": 569,
+    "tokens_saida": 125,
+    "custo_usd": 0.00008017
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 461
+  }
+ },
+ {
+  "id": 8,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Produto de má qualidade.",
+   "resposta_sugerida": "Lamentamos que o produto não atendeu às suas expectativas. Por favor, nos informe mais detalhes para que possamos avaliar a situação.",
+   "uso": {
+    "tokens_entrada": 554,
+    "tokens_saida": 126,
+    "custo_usd": 0.00007935
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 642
+  }
+ },
+ {
+  "id": 9,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Entrega atrasada, produto não funciona e veio em caixa errada, devolução e recusa futura.",
+   "resposta_sugerida": "Lamentamos profundamente o transtorno causado. Por favor, nos envie o número do pedido para que possamos analisar a situação e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 590,
+    "tokens_saida": 144,
+    "custo_usd": 0.00008745
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 447
+  }
+ },
+ {
+  "id": 10,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente expressa satisfação e recomendação.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que tenha gostado e que recomende nossos serviços.",
+   "uso": {
+    "tokens_entrada": 555,
+    "tokens_saida": 99,
+    "custo_usd": 0.00007132
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 278
+  }
+ },
+ {
+  "id": 11,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "outro",
+   "urgencia": "baixa",
+   "resumo": "Cliente teve que ir ao correio, mas recebeu a encomenda antes do prazo.",
+   "resposta_sugerida": "Agradecemos por compartilhar sua experiência. Lamentamos o transtorno de ter que buscar o pedido, mas ficamos felizes que ele chegou antes do prazo. Estamos à disposição para melhorar ainda mais seu atendimento.",
+   "uso": {
+    "tokens_entrada": 600,
+    "tokens_saida": 177,
+    "custo_usd": 0.0000981
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 501
+  }
+ },
+ {
+  "id": 12,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "qualidade",
+   "urgencia": "baixa",
+   "resumo": "Cliente observa que a qualidade do produto é razoável.",
+   "resposta_sugerida": "Agradecemos seu feedback. Se precisar de mais informações ou tiver alguma dúvida, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 153,
+    "custo_usd": 0.0000876
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 310
+  }
+ },
+ {
+  "id": 13,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto errado e não recebeu resposta ao e‑mail.",
+   "resposta_sugerida": "Lamentamos o ocorrido e agradecemos por nos informar. Estamos verificando o seu e‑mail e entraremos em contato em breve para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 602,
+    "tokens_saida": 115,
+    "custo_usd": 0.00007965
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 270
+  }
+ },
+ {
+  "id": 14,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e dentro do prazo.",
+   "resposta_sugerida": "Agradecemos pelo feedback positivo! Ficamos felizes que a entrega tenha atendido suas expectativas.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 95,
+    "custo_usd": 0.00007028
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 572
+  }
+ },
+ {
+  "id": 15,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "media",
+   "resumo": "Entrega demorou muito.",
+   "resposta_sugerida": "Lamentamos o atraso na entrega e agradecemos pela compreensão.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 119,
+    "custo_usd": 0.00007763
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 542
+  }
+ },
+ {
+  "id": 16,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Bom, mas material fraco",
+   "resposta_sugerida": "Agradecemos seu feedback! Vamos avaliar a qualidade do material para melhorar ainda mais.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 128,
+    "custo_usd": 0.00008055
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 445
+  }
+ },
+ {
+  "id": 17,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com produto e entrega pontual, elogia qualidade e serviço.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que o produto e a entrega atenderam suas expectativas.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 105,
+    "custo_usd": 0.0000735
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 411
+  }
+ },
+ {
+  "id": 18,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia qualidade, resistência e pontualidade, recomendando a marca.",
+   "resposta_sugerida": "Agradecemos muito pelo seu feedback positivo! Ficamos felizes em saber que o produto atendeu suas expectativas e que você confia na nossa entrega. Continuaremos nos esforçando para manter esse padrão de qualidade.",
+   "uso": {
+    "tokens_entrada": 591,
+    "tokens_saida": 131,
+    "custo_usd": 0.00008362
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 582
+  }
+ },
+ {
+  "id": 19,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Fonte incompatível com o modelo do computador adquirido.",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, nos envie o número do pedido e detalhes da compra para que possamos orientá-lo sobre a troca ou solução adequada.",
+   "uso": {
+    "tokens_entrada": 582,
+    "tokens_saida": 156,
+    "custo_usd": 0.00009045
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 344
+  }
+ },
+ {
+  "id": 20,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu o pedido após pagamento.",
+   "resposta_sugerida": "Lamentamos a situação e estamos verificando o status do seu pedido. Entraremos em contato em breve com as informações atualizadas. Agradecemos a paciência.",
+   "uso": {
+    "tokens_entrada": 561,
+    "tokens_saida": 160,
+    "custo_usd": 0.00009007
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 449
+  }
+ },
+ {
+  "id": 21,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente reclama da baixa qualidade do material, detalhes grosseiros e falta de regulagem na pulseira.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha atendido às suas expectativas. Por favor, nos envie fotos dos defeitos para que possamos avaliar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 571,
+    "tokens_saida": 123,
+    "custo_usd": 0.00007972
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 237
+  }
+ },
+ {
+  "id": 22,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Produto excelente, entrega rápida e recomendação positiva.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tenha gostado do produto e da entrega. Estamos à disposição para atendê-lo sempre que precisar.",
+   "uso": {
+    "tokens_entrada": 567,
+    "tokens_saida": 106,
+    "custo_usd": 0.00007432
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 270
+  }
+ },
+ {
+  "id": 23,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia a loja, destaca pontualidade e qualidade dos produtos.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes em saber que seu pedido chegou no prazo e em perfeitas condições. Estamos à disposição para atendê-lo sempre que precisar.",
+   "uso": {
+    "tokens_entrada": 565,
+    "tokens_saida": 114,
+    "custo_usd": 0.00007657
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 288
+  }
+ },
+ {
+  "id": 24,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega mais rápida que o prazo prometido.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que a entrega tenha sido mais rápida do que o esperado.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 127,
+    "custo_usd": 0.00007995
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 360
+  }
+ },
+ {
+  "id": 25,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente confirma que o produto atendeu às expectativas.",
+   "resposta_sugerida": "Ficamos felizes que o produto tenha sido exatamente o que você procurava! Agradecemos pela preferência e estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 142,
+    "custo_usd": 0.00008438
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 636
+  }
+ },
+ {
+  "id": 26,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Produto chegou dentro do prazo",
+   "resposta_sugerida": "Agradecemos pelo feedback positivo! Ficamos felizes que o produto chegou no prazo e atendeu às suas expectativas.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 100,
+    "custo_usd": 0.000072
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 373
+  }
+ },
+ {
+  "id": 27,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "produto_danificado",
+   "urgencia": "media",
+   "resumo": "Produto bom, mas alças não travam corretamente, causando descida.",
+   "resposta_sugerida": "Agradecemos seu feedback. Vamos analisar a questão das alças e buscar uma solução para garantir o ajuste adequado. Caso precise de mais assistência, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 579,
+    "tokens_saida": 141,
+    "custo_usd": 0.00008572
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 526
+  }
+ },
+ {
+  "id": 28,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega antecipada e satisfação total.",
+   "resposta_sugerida": "Ficamos felizes em saber que a entrega atendeu suas expectativas. Agradecemos pela preferência e esperamos atendê-la novamente!",
+   "uso": {
+    "tokens_entrada": 563,
+    "tokens_saida": 103,
+    "custo_usd": 0.00007313
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 240
+  }
+ },
+ {
+  "id": 29,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com produto, entrega rápida e recomenda serviço.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que o produto atendeu suas expectativas e chegou antes do prazo.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 103,
+    "custo_usd": 0.00007305
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 334
+  }
+ },
+ {
+  "id": 30,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente recomenda compras, relata ausência de problemas com os produtos.",
+   "resposta_sugerida": "Agradecemos sua recomendação e ficamos felizes que tudo tenha atendido suas expectativas. Estamos à disposição para futuras compras!",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 108,
+    "custo_usd": 0.00007455
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 924
+  }
+ },
+ {
+  "id": 31,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega pontual, produto correto e bem embalado.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes em saber que tudo chegou conforme esperado. Estamos à disposição para qualquer outra necessidade.",
+   "uso": {
+    "tokens_entrada": 565,
+    "tokens_saida": 100,
+    "custo_usd": 0.00007237
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 366
+  }
+ },
+ {
+  "id": 32,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "preco",
+   "urgencia": "media",
+   "resumo": "Produto bom, mas entrega lenta e frete caro.",
+   "resposta_sugerida": "Agradecemos seu feedback! Estamos trabalhando para reduzir custos e prazos de entrega. Se precisar de mais informações, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 578,
+    "tokens_saida": 170,
+    "custo_usd": 0.00009435
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 298
+  }
+ },
+ {
+  "id": 33,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu produto, foi cobrado e pede reembolso urgente.",
+   "resposta_sugerida": "Lamentamos o transtorno e entendemos sua frustração. Vamos investigar imediatamente e manteremos você informado sobre o andamento do reembolso.",
+   "uso": {
+    "tokens_entrada": 597,
+    "tokens_saida": 140,
+    "custo_usd": 0.00008678
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 525
+  }
+ },
+ {
+  "id": 34,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "outro",
+   "urgencia": "baixa",
+   "resumo": "Cliente expressa desconfiança em comprar de terceiros, citando experiências negativas anteriores.",
+   "resposta_sugerida": "Agradecemos seu feedback e entendemos sua preocupação. Estamos sempre trabalhando para garantir a segurança e a qualidade de nossos serviços.",
+   "uso": {
+    "tokens_entrada": 587,
+    "tokens_saida": 131,
+    "custo_usd": 0.00008332
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 312
+  }
+ },
+ {
+  "id": 35,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente solicita troca de relógio.",
+   "resposta_sugerida": "Olá! Para iniciarmos o processo de troca, por favor nos informe o número do pedido e o motivo da troca. Estamos à disposição para ajudar.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 134,
+    "custo_usd": 0.00008198
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 420
+  }
+ },
+ {
+  "id": 36,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu a mercadoria.",
+   "resposta_sugerida": "Lamentamos o transtorno. Vamos verificar imediatamente o status da entrega e manteremos você informado.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 97,
+    "custo_usd": 0.0000708
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 331
+  }
+ },
+ {
+  "id": 37,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um dos relógios, faltou o LED e a entrega foi marcada como concluída.",
+   "resposta_sugerida": "Lamentamos o transtorno e agradecemos por nos informar. Iremos verificar imediatamente o ocorrido e orientá-lo sobre os próximos passos para a entrega correta.",
+   "uso": {
+    "tokens_entrada": 628,
+    "tokens_saida": 115,
+    "custo_usd": 0.0000816
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 655
+  }
+ },
+ {
+  "id": 38,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu o produto e questiona se é problema do correio.",
+   "resposta_sugerida": "Olá! Lamentamos que seu pedido ainda não tenha chegado. Verificaremos com a transportadora e entraremos em contato em breve para esclarecer a situação.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 115,
+    "custo_usd": 0.00007665
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 316
+  }
+ },
+ {
+  "id": 39,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata que o produto não chegou e solicita verificação de entrega.",
+   "resposta_sugerida": "Olá! Lamentamos o transtorno. Estamos verificando junto aos Correios a localização do seu pedido e quem recebeu. Entraremos em contato em breve com as informações.",
+   "uso": {
+    "tokens_entrada": 576,
+    "tokens_saida": 113,
+    "custo_usd": 0.0000771
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 368
+  }
+ },
+ {
+  "id": 40,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega dentro do prazo, cliente satisfeito.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes em saber que a entrega atendeu suas expectativas.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 112,
+    "custo_usd": 0.0000753
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 487
+  }
+ },
+ {
+  "id": 41,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com produto e entrega rápida.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tenha gostado do produto e da entrega. Esperamos atendê-lo novamente em breve.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 106,
+    "custo_usd": 0.0000735
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 229
+  }
+ },
+ {
+  "id": 42,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto errado e está insatisfeito.",
+   "resposta_sugerida": "Lamentamos o erro no envio. Por favor, nos envie fotos do produto recebido para que possamos corrigir a situação o quanto antes.",
+   "uso": {
+    "tokens_entrada": 594,
+    "tokens_saida": 104,
+    "custo_usd": 0.00007575
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 393
+  }
+ },
+ {
+  "id": 43,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cartuchos entregues vazios.",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, nos envie fotos dos cartuchos vazios para que possamos providenciar a substituição o mais rápido possível.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 119,
+    "custo_usd": 0.0000774
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 343
+  }
+ },
+ {
+  "id": 44,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia produto e atendimento excelente.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes em saber que o produto e o atendimento atenderam suas expectativas. Estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 566,
+    "tokens_saida": 105,
+    "custo_usd": 0.00007395
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 359
+  }
+ },
+ {
+  "id": 45,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Cliente relata que a mercadoria foi roubada nos correios e aguarda reposição.",
+   "resposta_sugerida": "Lamentamos muito pelo ocorrido. Estamos verificando a situação e entraremos em contato em breve para providenciar a reposição.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 143,
+    "custo_usd": 0.0000852
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 437
+  }
+ },
+ {
+  "id": 46,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "atraso",
+   "urgencia": "media",
+   "resumo": "Cliente elogia atendimento, mas reclama atraso na entrega da mercadoria.",
+   "resposta_sugerida": "Agradecemos seu feedback e ficamos felizes que tenha sido bem atendido. Estamos trabalhando para reduzir os prazos de entrega.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 142,
+    "custo_usd": 0.00008475
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 347
+  }
+ },
+ {
+  "id": 47,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente insatisfeito com acabamento e aparência do produto, apesar de entrega pontual.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha atendido suas expectativas. Por favor, nos envie fotos do item para que possamos avaliar a situação e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 597,
+    "tokens_saida": 119,
+    "custo_usd": 0.00008047
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 456
+  }
+ },
+ {
+  "id": 48,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente recebeu sacolão sem forro, não conforme descrição.",
+   "resposta_sugerida": "Lamentamos que o produto não atendeu às expectativas. Por favor, nos envie fotos para que possamos avaliar a situação e encontrar a melhor solução.",
+   "uso": {
+    "tokens_entrada": 590,
+    "tokens_saida": 176,
+    "custo_usd": 0.00009705
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 382
+  }
+ },
+ {
+  "id": 49,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente ainda não recebeu a capa de celular e questiona confiabilidade dos parceiros.",
+   "resposta_sugerida": "Olá! Sentimos muito pela demora na entrega. Estamos verificando o status do seu pedido e entraremos em contato em breve com uma atualização.",
+   "uso": {
+    "tokens_entrada": 586,
+    "tokens_saida": 126,
+    "custo_usd": 0.00008175
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 407
+  }
+ },
+ {
+  "id": 50,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu o produto, mas foi debitado no cartão.",
+   "resposta_sugerida": "Olá, lamentamos o transtorno. Verificaremos imediatamente o status do seu pedido e entraremos em contato para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 110,
+    "custo_usd": 0.00007515
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 276
+  }
+ },
+ {
+  "id": 51,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente expressa decepção com a marca, questionando a exposição da logomarca.",
+   "resposta_sugerida": "Lamentamos que sua experiência não tenha sido satisfatória. Valorizamos seu feedback e estamos à disposição para entender melhor suas expectativas.",
+   "uso": {
+    "tokens_entrada": 602,
+    "tokens_saida": 132,
+    "custo_usd": 0.00008475
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 398
+  }
+ },
+ {
+  "id": 52,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu antena diferente da comprada.",
+   "resposta_sugerida": "Lamentamos o ocorrido. Por favor, nos envie fotos do produto recebido para que possamos verificar a situação e orientá-lo sobre os próximos passos.",
+   "uso": {
+    "tokens_entrada": 582,
+    "tokens_saida": 109,
+    "custo_usd": 0.00007635
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 262
+  }
+ },
+ {
+  "id": 53,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente relata que o produto chegou antes do prazo e em perfeitas condições, expressando satisfação total.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes em saber que o produto chegou cedo e sem defeitos.",
+   "uso": {
+    "tokens_entrada": 568,
+    "tokens_saida": 113,
+    "custo_usd": 0.0000765
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1002
+  }
+ },
+ {
+  "id": 54,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um frasco de vitaminas em vez de dois.",
+   "resposta_sugerida": "Lamentamos o ocorrido. Por favor, nos envie o número do pedido para que possamos localizar o segundo frasco e providenciar a entrega o mais rápido possível.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 113,
+    "custo_usd": 0.0000762
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 337
+  }
+ },
+ {
+  "id": 55,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com qualidade",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que tenha gostado do produto. Estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 102,
+    "custo_usd": 0.00007237
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 378
+  }
+ },
+ {
+  "id": 56,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente precisou retirar o pedido no correio, pois não foi entregue em casa.",
+   "resposta_sugerida": "Olá! Lamentamos que a entrega não tenha ocorrido em sua residência. Podemos verificar a situação e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 568,
+    "tokens_saida": 151,
+    "custo_usd": 0.0000879
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 288
+  }
+ },
+ {
+  "id": 57,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Película de celular entregue em tamanho incorreto, impossibilitando uso completo.",
+   "resposta_sugerida": "Lamentamos o transtorno e agradecemos por nos informar. Vamos verificar a situação e orientá-lo sobre como proceder para resolver o problema.",
+   "uso": {
+    "tokens_entrada": 593,
+    "tokens_saida": 114,
+    "custo_usd": 0.00007868
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 566
+  }
+ },
+ {
+  "id": 58,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Produto bonito, mas qualidade abaixo do esperado para uso diário.",
+   "resposta_sugerida": "Agradecemos seu feedback e lamentamos que a qualidade não tenha atendido suas expectativas. Estamos sempre buscando melhorar e valorizamos sua opinião.",
+   "uso": {
+    "tokens_entrada": 570,
+    "tokens_saida": 199,
+    "custo_usd": 0.00010245
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 478
+  }
+ },
+ {
+  "id": 59,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente ainda não recebeu o pedido e não tem opinião sobre o produto.",
+   "resposta_sugerida": "Lamentamos o atraso na entrega. Estamos verificando o status do seu pedido e entraremos em contato em breve para atualizá-lo.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 149,
+    "custo_usd": 0.00008647
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 458
+  }
+ },
+ {
+  "id": 60,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto diferente do pedido.",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, nos envie fotos do produto recebido para que possamos corrigir a situação.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 101,
+    "custo_usd": 0.00007245
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 253
+  }
+ },
+ {
+  "id": 61,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu a mercadoria.",
+   "resposta_sugerida": "Lamentamos a situação e estamos verificando o status do seu pedido para garantir a entrega o quanto antes. Agradecemos sua paciência.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 120,
+    "custo_usd": 0.0000777
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 445
+  }
+ },
+ {
+  "id": 62,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu tapete, sistema indica entrega.",
+   "resposta_sugerida": "Lamentamos o transtorno. Verificaremos imediatamente a situação e entraremos em contato para resolver o problema.",
+   "uso": {
+    "tokens_entrada": 563,
+    "tokens_saida": 113,
+    "custo_usd": 0.00007612
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 606
+  }
+ },
+ {
+  "id": 63,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e produto intacto",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes em saber que a entrega atendeu suas expectativas. Estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 106,
+    "custo_usd": 0.0000738
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 199
+  }
+ },
+ {
+  "id": 64,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu os posts, apenas o papel de parede.",
+   "resposta_sugerida": "Lamentamos o transtorno. Verificaremos imediatamente o ocorrido e entraremos em contato para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 561,
+    "tokens_saida": 119,
+    "custo_usd": 0.00007777
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 210
+  }
+ },
+ {
+  "id": 65,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente expressa decepção geral.",
+   "resposta_sugerida": "Lamentamos que sua experiência não tenha sido satisfatória. Poderia nos fornecer mais detalhes para que possamos entender melhor o que ocorreu?",
+   "uso": {
+    "tokens_entrada": 553,
+    "tokens_saida": 132,
+    "custo_usd": 0.00008108
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 260
+  }
+ },
+ {
+  "id": 66,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um dos dois filtros pagos.",
+   "resposta_sugerida": "Olá! Lamentamos o transtorno. Verificaremos imediatamente o ocorrido e entraremos em contato para corrigir a entrega.",
+   "uso": {
+    "tokens_entrada": 563,
+    "tokens_saida": 100,
+    "custo_usd": 0.00007222
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 289
+  }
+ },
+ {
+  "id": 67,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Produto excelente e entrega rápida.",
+   "resposta_sugerida": "Agradecemos pelo feedback positivo! Ficamos felizes que o produto atendeu suas expectativas e que a entrega foi satisfatória.",
+   "uso": {
+    "tokens_entrada": 563,
+    "tokens_saida": 96,
+    "custo_usd": 0.00007103
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 414
+  }
+ },
+ {
+  "id": 68,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto errado e não teve retorno da reclamação.",
+   "resposta_sugerida": "Lamentamos o transtorno e agradecemos por nos informar. Estamos verificando o seu caso e entraremos em contato em breve.",
+   "uso": {
+    "tokens_entrada": 592,
+    "tokens_saida": 112,
+    "custo_usd": 0.000078
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 378
+  }
+ },
+ {
+  "id": 69,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente recebeu duas resistências 110 em vez de 110 e 220, expressa desapontamento e busca solução.",
+   "resposta_sugerida": "Olá! Lamentamos o erro no envio. Por favor, nos envie uma foto do produto recebido para que possamos providenciar a troca correta o quanto antes. Agradecemos a compreensão.",
+   "uso": {
+    "tokens_entrada": 581,
+    "tokens_saida": 173,
+    "custo_usd": 0.00009547
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 436
+  }
+ },
+ {
+  "id": 70,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente não ficou satisfeito com o produto, mas recebeu antes da data prevista.",
+   "resposta_sugerida": "Agradecemos seu feedback e ficamos felizes que a entrega tenha sido rápida. Se houver algo que possamos fazer para melhorar sua experiência, por favor nos informe.",
+   "uso": {
+    "tokens_entrada": 577,
+    "tokens_saida": 144,
+    "custo_usd": 0.00008647
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 454
+  }
+ },
+ {
+  "id": 71,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um mini berço, faltam os dois kits.",
+   "resposta_sugerida": "Olá! Lamentamos o transtorno. Verificaremos imediatamente a situação e entraremos em contato para resolver a entrega dos kits faltantes. Agradecemos a compreensão.",
+   "uso": {
+    "tokens_entrada": 567,
+    "tokens_saida": 166,
+    "custo_usd": 0.00009232
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 448
+  }
+ },
+ {
+  "id": 72,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu produto, pagamento aprovado, status indisponível.",
+   "resposta_sugerida": "Lamentamos profundamente a situação. Estamos investigando o ocorrido e entraremos em contato em breve com uma solução adequada.",
+   "uso": {
+    "tokens_entrada": 615,
+    "tokens_saida": 157,
+    "custo_usd": 0.00009322
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 456
+  }
+ },
+ {
+  "id": 73,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Elogio ao atendimento ao cliente.",
+   "resposta_sugerida": "Agradecemos seu feedback e continuaremos aprimorando nosso atendimento.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 137,
+    "custo_usd": 0.00008295
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 320
+  }
+ },
+ {
+  "id": 74,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cadeira chegou incompleta e com peças faltantes, solicitando troca.",
+   "resposta_sugerida": "Lamentamos o transtorno e agradecemos por nos informar. Por favor, nos envie fotos das peças faltantes para que possamos providenciar a troca o mais rápido possível.",
+   "uso": {
+    "tokens_entrada": 602,
+    "tokens_saida": 145,
+    "custo_usd": 0.00008865
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 403
+  }
+ },
+ {
+  "id": 75,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Entrega fora da data e confusa",
+   "resposta_sugerida": "Lamentamos a confusão e o atraso na entrega. Estamos verificando o ocorrido para evitar que isso volte a acontecer.",
+   "uso": {
+    "tokens_entrada": 561,
+    "tokens_saida": 100,
+    "custo_usd": 0.00007207
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 752
+  }
+ },
+ {
+  "id": 76,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com o produto e recomenda.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo e ficamos felizes que atendeu às suas expectativas. Estamos à disposição para futuras compras!",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 97,
+    "custo_usd": 0.0000708
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 384
+  }
+ },
+ {
+  "id": 77,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto incorreto",
+   "resposta_sugerida": "Lamentamos o erro no envio. Por favor, nos envie fotos do item recebido para que possamos corrigir imediatamente.",
+   "uso": {
+    "tokens_entrada": 555,
+    "tokens_saida": 100,
+    "custo_usd": 0.00007163
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 878
+  }
+ },
+ {
+  "id": 78,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto amassado e mal embalado, expressando insatisfação.",
+   "resposta_sugerida": "Lamentamos o ocorrido e agradecemos por nos informar. Estamos à disposição para resolver a situação da melhor forma possível.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 117,
+    "custo_usd": 0.0000774
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 257
+  }
+ },
+ {
+  "id": 79,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente relata produto ruim.",
+   "resposta_sugerida": "Lamentamos que o produto não atendeu às suas expectativas. Por favor, nos informe mais detalhes para que possamos melhorar.",
+   "uso": {
+    "tokens_entrada": 554,
+    "tokens_saida": 113,
+    "custo_usd": 0.00007545
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 329
+  }
+ },
+ {
+  "id": 80,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Cliente relata defeito na câmera e não consegue contato para troca ou devolução.",
+   "resposta_sugerida": "Olá! Sentimos muito pelo transtorno. Por favor, envie uma foto do defeito para o e‑mail suporte@empresa.com e nossa equipe entrará em contato rapidamente para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 568,
+    "tokens_saida": 127,
+    "custo_usd": 0.0000807
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1816
+  }
+ },
+ {
+  "id": 81,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente expressa aprovação com a palavra 'LEGAL'.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Estamos sempre à disposição para atendê-lo da melhor forma.",
+   "uso": {
+    "tokens_entrada": 551,
+    "tokens_saida": 96,
+    "custo_usd": 0.00007012
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 348
+  }
+ },
+ {
+  "id": 82,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "outro",
+   "urgencia": "baixa",
+   "resumo": "Cliente apenas enviou seu nome.",
+   "resposta_sugerida": "Olá Denis, como podemos ajudar você hoje?",
+   "uso": {
+    "tokens_entrada": 552,
+    "tokens_saida": 70,
+    "custo_usd": 0.0000624
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 503
+  }
+ },
+ {
+  "id": 83,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "media",
+   "resumo": "Um dos fones não funciona na sintonização de rádio FM, enquanto o outro parece estar bom.",
+   "resposta_sugerida": "Olá! Sentimos muito pelo transtorno. Por favor, nos envie mais detalhes sobre o fone com problema para que possamos orientá-lo sobre as próximas etapas.",
+   "uso": {
+    "tokens_entrada": 571,
+    "tokens_saida": 140,
+    "custo_usd": 0.00008482
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 244
+  }
+ },
+ {
+  "id": 84,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente reclama atraso na entrega, esperando no dia 22/01/18 e já é 24/01/18.",
+   "resposta_sugerida": "Lamentamos o atraso na entrega e entendemos sua frustração. Estamos verificando o status do seu pedido e entraremos em contato em breve com uma atualização.",
+   "uso": {
+    "tokens_entrada": 611,
+    "tokens_saida": 136,
+    "custo_usd": 0.00008663
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 272
+  }
+ },
+ {
+  "id": 85,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente relata produto de baixa qualidade, com ferrugem no primeiro dia de uso.",
+   "resposta_sugerida": "Lamentamos que o produto não atendeu às suas expectativas. Por favor, nos envie fotos do item para que possamos avaliar a situação e encontrar a melhor solução.",
+   "uso": {
+    "tokens_entrada": 570,
+    "tokens_saida": 121,
+    "custo_usd": 0.00007905
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 448
+  }
+ },
+ {
+  "id": 86,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita com o valor e tamanho dos potes.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tenha gostado do produto e do preço.",
+   "uso": {
+    "tokens_entrada": 566,
+    "tokens_saida": 119,
+    "custo_usd": 0.00007815
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 254
+  }
+ },
+ {
+  "id": 87,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente recomenda comprar no site das Lannister.",
+   "resposta_sugerida": "Agradecemos a recomendação! Ficamos felizes que tenha tido uma boa experiência conosco.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 105,
+    "custo_usd": 0.0000735
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 296
+  }
+ },
+ {
+  "id": 88,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu o produto e não teve retorno do correio.",
+   "resposta_sugerida": "Lamentamos profundamente a situação. Por favor, nos envie o número do pedido para que possamos investigar e encontrar uma solução adequada.",
+   "uso": {
+    "tokens_entrada": 621,
+    "tokens_saida": 125,
+    "custo_usd": 0.00008407
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1641
+  }
+ },
+ {
+  "id": 89,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia qualidade e preço acessível, recomenda produto.",
+   "resposta_sugerida": "Agradecemos muito pelo seu feedback positivo! Ficamos felizes que tenha gostado do produto e do preço. Esperamos atendê-lo novamente em breve.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 109,
+    "custo_usd": 0.000075
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1139
+  }
+ },
+ {
+  "id": 90,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente questiona autenticidade e nota falta de selos, além de baixa qualidade na fixação do produto.",
+   "resposta_sugerida": "Agradecemos seu feedback e entendemos sua preocupação. Estamos verificando a procedência e a qualidade do item para garantir sua satisfação.",
+   "uso": {
+    "tokens_entrada": 586,
+    "tokens_saida": 140,
+    "custo_usd": 0.00008595
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 678
+  }
+ },
+ {
+  "id": 91,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata falha na última entrega.",
+   "resposta_sugerida": "Lamentamos a falha na entrega. Estamos verificando o ocorrido e entraremos em contato em breve para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 555,
+    "tokens_saida": 142,
+    "custo_usd": 0.00008423
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 552
+  }
+ },
+ {
+  "id": 92,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata que o celular não chegou dentro do prazo, expressa insatisfação e não recomenda a loja.",
+   "resposta_sugerida": "Lamentamos profundamente que seu pedido não tenha chegado no prazo. Estamos verificando o ocorrido e entraremos em contato em breve para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 603,
+    "tokens_saida": 127,
+    "custo_usd": 0.00008333
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 288
+  }
+ },
+ {
+  "id": 93,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega pontual e produto recebido com sucesso.",
+   "resposta_sugerida": "Agradecemos pela sua avaliação! Ficamos felizes em saber que a entrega foi no prazo e o produto chegou em perfeitas condições. Estamos à disposição para qualquer outra necessidade.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 122,
+    "custo_usd": 0.00007853
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 271
+  }
+ },
+ {
+  "id": 94,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata atraso de duas semanas e falta de reembolso.",
+   "resposta_sugerida": "Lamentamos profundamente a demora e a falta de reembolso. Estamos verificando o status do seu pedido e entraremos em contato em breve para resolver a situação.",
+   "uso": {
+    "tokens_entrada": 567,
+    "tokens_saida": 120,
+    "custo_usd": 0.00007853
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 366
+  }
+ },
+ {
+  "id": 95,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e satisfatória.",
+   "resposta_sugerida": "Agradecemos pelo feedback! Ficamos felizes que a entrega tenha sido rápida. Estamos à disposição para qualquer outra necessidade.",
+   "uso": {
+    "tokens_entrada": 554,
+    "tokens_saida": 93,
+    "custo_usd": 0.00006945
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 432
+  }
+ },
+ {
+  "id": 96,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Produto bom, cor não disponível, atendimento rápido e satisfatório.",
+   "resposta_sugerida": "Agradecemos seu feedback! Lamentamos a indisponibilidade da cor escolhida, mas ficamos felizes que o atendimento tenha atendido suas expectativas. Estamos à disposição para qualquer outra necessidade.",
+   "uso": {
+    "tokens_entrada": 577,
+    "tokens_saida": 178,
+    "custo_usd": 0.00009667
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 484
+  }
+ },
+ {
+  "id": 97,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Pedido em atraso desde fevereiro, cliente ameaça ação legal.",
+   "resposta_sugerida": "Lamentamos profundamente a demora e entendemos sua frustração. Estamos investigando o status do seu pedido e entraremos em contato com uma solução o mais rápido possível. Agradecemos sua paciência e compreensão.",
+   "uso": {
+    "tokens_entrada": 572,
+    "tokens_saida": 169,
+    "custo_usd": 0.0000936
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 958
+  }
+ },
+ {
+  "id": 98,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Cartucho HP chegou com defeito, testado e descartado, cliente não recomenda compra.",
+   "resposta_sugerida": "Lamentamos que o cartucho tenha chegado com problema. Por favor, nos envie o número do pedido para que possamos avaliar a situação e encontrar a melhor solução para você. Agradecemos por nos informar e estamos à disposição para ajudar.",
+   "uso": {
+    "tokens_entrada": 573,
+    "tokens_saida": 150,
+    "custo_usd": 0.00008797
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 456
+  }
+ },
+ {
+  "id": 99,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia produto que corresponde à foto.",
+   "resposta_sugerida": "Ficamos felizes que o produto atendeu suas expectativas! Agradecemos seu feedback positivo.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 97,
+    "custo_usd": 0.00007095
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 813
+  }
+ },
+ {
+  "id": 100,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega pontual, cliente ainda não avaliou qualidade.",
+   "resposta_sugerida": "Olá! Agradecemos por confirmar a entrega no prazo. Quando tiver usado o produto, fique à vontade para nos enviar seu feedback. Estamos à disposição para qualquer dúvida!",
+   "uso": {
+    "tokens_entrada": 571,
+    "tokens_saida": 182,
+    "custo_usd": 0.00009742
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 499
+  }
+ },
+ {
+  "id": 101,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega mais rápida do que o previsto.",
+   "resposta_sugerida": "Agradecemos pelo feedback! Ficamos felizes que sua entrega tenha sido mais rápida do que o esperado.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 105,
+    "custo_usd": 0.00007342
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 569
+  }
+ },
+ {
+  "id": 102,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia produto que atendeu expectativas, parabenizando a empresa.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que o produto tenha atendido suas expectativas.",
+   "uso": {
+    "tokens_entrada": 568,
+    "tokens_saida": 105,
+    "custo_usd": 0.0000741
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 471
+  }
+ },
+ {
+  "id": 103,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "atraso",
+   "urgencia": "media",
+   "resumo": "Entrega demorou, mas produto chegou correto.",
+   "resposta_sugerida": "Agradecemos seu feedback. Lamentamos o atraso e ficamos felizes que o produto chegou em boas condições.",
+   "uso": {
+    "tokens_entrada": 563,
+    "tokens_saida": 135,
+    "custo_usd": 0.00008272
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1354
+  }
+ },
+ {
+  "id": 104,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu fone não original da Samsung com qualidade ruim.",
+   "resposta_sugerida": "Lamentamos que o produto não atendeu às suas expectativas. Por favor, entre em contato conosco para que possamos encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 570,
+    "tokens_saida": 134,
+    "custo_usd": 0.00008295
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 371
+  }
+ },
+ {
+  "id": 105,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu produto errado e não tem retorno do fornecedor.",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, informe seu número de pedido para que possamos encaminhar a troca imediatamente e garantir sua satisfação.",
+   "uso": {
+    "tokens_entrada": 578,
+    "tokens_saida": 113,
+    "custo_usd": 0.00007725
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 389
+  }
+ },
+ {
+  "id": 106,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia a qualidade e embalagem da mercadoria.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que a mercadoria atendeu suas expectativas.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 98,
+    "custo_usd": 0.00007125
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 3307
+  }
+ },
+ {
+  "id": 107,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "media",
+   "resumo": "Cliente recebeu produto com cor diferente da foto, não corresponde ao esperado.",
+   "resposta_sugerida": "Olá! Sentimos muito que a cor do produto não atendeu às suas expectativas. Por favor, nos envie fotos do item recebido para que possamos encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 576,
+    "tokens_saida": 117,
+    "custo_usd": 0.0000783
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 917
+  }
+ },
+ {
+  "id": 108,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "media",
+   "resumo": "Cliente relata problema com o aparelho, apesar de estar satisfeito com a loja.",
+   "resposta_sugerida": "Olá! Sentimos muito pelo inconveniente com o aparelho. Por favor, nos envie mais detalhes para que possamos ajudá-lo da melhor forma possível.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 163,
+    "custo_usd": 0.00009082
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 569
+  }
+ },
+ {
+  "id": 109,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "qualidade",
+   "urgencia": "baixa",
+   "resumo": "Produto bom, mas frágil.",
+   "resposta_sugerida": "Agradecemos seu feedback! Tomaremos cuidado extra para embalar melhor e garantir a segurança do produto.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 122,
+    "custo_usd": 0.0000783
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 550
+  }
+ },
+ {
+  "id": 110,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente confirma recebimento correto e pontual.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tudo tenha chegado como esperado. Estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 98,
+    "custo_usd": 0.00007125
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 495
+  }
+ },
+ {
+  "id": 111,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia atendimento excelente e entrega perfeita.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes em saber que o atendimento atendeu às suas expectativas. Estamos à disposição para qualquer necessidade futura.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 107,
+    "custo_usd": 0.0000741
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 299
+  }
+ },
+ {
+  "id": 112,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atendimento",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu o produto no correio, não no endereço solicitado.",
+   "resposta_sugerida": "Lamentamos o transtorno causado. Por favor, entre em contato com nosso suporte para que possamos corrigir a entrega e garantir que o produto chegue ao endereço correto.",
+   "uso": {
+    "tokens_entrada": 573,
+    "tokens_saida": 209,
+    "custo_usd": 0.00010567
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 601
+  }
+ },
+ {
+  "id": 113,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente relata que a cor do produto é mais escura que a imagem, mas não expressa insatisfação extrema.",
+   "resposta_sugerida": "Agradecemos seu feedback. Entendemos sua preocupação com a tonalidade e estamos revisando as imagens para garantir maior fidelidade. Caso queira trocar, informe-nos e providenciaremos a solução.",
+   "uso": {
+    "tokens_entrada": 568,
+    "tokens_saida": 161,
+    "custo_usd": 0.0000909
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 548
+  }
+ },
+ {
+  "id": 114,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Entrega rápida, mas produto de baixa qualidade e muito barato.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha atendido suas expectativas. Por favor, nos informe o número do pedido para que possamos analisar a situação e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 590,
+    "tokens_saida": 115,
+    "custo_usd": 0.00007875
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 410
+  }
+ },
+ {
+  "id": 115,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente satisfeita e recomenda o produto.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Ficamos felizes que tenha gostado do produto e que o recomende.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 99,
+    "custo_usd": 0.0000717
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 411
+  }
+ },
+ {
+  "id": 116,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente insatisfeito com qualidade do boneco, mal pintado e borrado.",
+   "resposta_sugerida": "Lamentamos que o boneco não atendeu às suas expectativas. Por favor, nos envie fotos do produto para que possamos avaliar a situação e encontrar a melhor solução.",
+   "uso": {
+    "tokens_entrada": 572,
+    "tokens_saida": 157,
+    "custo_usd": 0.00009
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 385
+  }
+ },
+ {
+  "id": 117,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente ainda não recebeu pedido, atraso e data de compra incorreta.",
+   "resposta_sugerida": "Olá! Lamentamos o atraso na entrega e a confusão com a data de compra. Estamos verificando o status do seu pedido e entraremos em contato em breve com uma atualização.",
+   "uso": {
+    "tokens_entrada": 576,
+    "tokens_saida": 118,
+    "custo_usd": 0.0000786
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 213
+  }
+ },
+ {
+  "id": 118,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um dos três produtos e não recebeu contato da empresa.",
+   "resposta_sugerida": "Lamentamos a situação e agradecemos por nos informar. Estamos verificando o status dos itens faltantes e entraremos em contato em breve para esclarecer a entrega.",
+   "uso": {
+    "tokens_entrada": 586,
+    "tokens_saida": 116,
+    "custo_usd": 0.00007875
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 274
+  }
+ },
+ {
+  "id": 119,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas uma das duas unidades compradas.",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, nos informe o número do pedido para que possamos localizar a segunda unidade e providenciar a entrega o mais rápido possível.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 109,
+    "custo_usd": 0.0000747
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 201
+  }
+ },
+ {
+  "id": 120,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente confirma que tudo está conforme combinado.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes em saber que tudo atendeu às suas expectativas. Qualquer outra necessidade, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 553,
+    "tokens_saida": 142,
+    "custo_usd": 0.00008407
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 465
+  }
+ },
+ {
+  "id": 121,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu poltronas após prazo, reclama frete abusivo.",
+   "resposta_sugerida": "Lamentamos a situação e agradecemos por nos informar. Estamos verificando o status do seu pedido e entraremos em contato em breve para esclarecer a entrega e o valor do frete.",
+   "uso": {
+    "tokens_entrada": 590,
+    "tokens_saida": 120,
+    "custo_usd": 0.00008025
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 467
+  }
+ },
+ {
+  "id": 122,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata que o pedido não chegou dentro do prazo estipulado.",
+   "resposta_sugerida": "Olá! Lamentamos que seu pedido ainda não tenha chegado. Estamos verificando a situação e entraremos em contato em breve para esclarecer o ocorrido.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 107,
+    "custo_usd": 0.0000744
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 527
+  }
+ },
+ {
+  "id": 123,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "atraso",
+   "urgencia": "media",
+   "resumo": "Cliente elogia produto, mas reclama atraso na entrega.",
+   "resposta_sugerida": "Agradecemos o elogio e pedimos desculpas pelo atraso. Estamos acompanhando o seu pedido para garantir a entrega o mais breve possível. Se precisar de mais informações, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 147,
+    "custo_usd": 0.00008625
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 1187
+  }
+ },
+ {
+  "id": 124,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e recomendação positiva",
+   "resposta_sugerida": "Agradecemos pelo feedback! Ficamos felizes que a entrega tenha sido rápida e que você recomende nossos serviços.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 94,
+    "custo_usd": 0.00007012
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 945
+  }
+ },
+ {
+  "id": 125,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Produto de boa qualidade, entrega rápida e recomendação do cliente.",
+   "resposta_sugerida": "Agradecemos sua recomendação e ficamos felizes que tenha ficado satisfeito com a qualidade e a entrega do seu pedido!",
+   "uso": {
+    "tokens_entrada": 566,
+    "tokens_saida": 102,
+    "custo_usd": 0.00007305
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 401
+  }
+ },
+ {
+  "id": 126,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Produto não cabe no PS4 do cliente.",
+   "resposta_sugerida": "Olá! Sentimos muito pelo transtorno. Por favor, nos informe o modelo exato do seu PS4 para que possamos verificar a compatibilidade e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 556,
+    "tokens_saida": 126,
+    "custo_usd": 0.0000795
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 398
+  }
+ },
+ {
+  "id": 127,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Produto atendeu expectativas e agradou a namorada do cliente.",
+   "resposta_sugerida": "Ficamos felizes em saber que o produto agradou sua namorada! Se precisar de algo mais, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 569,
+    "tokens_saida": 109,
+    "custo_usd": 0.00007538
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 430
+  }
+ },
+ {
+  "id": 128,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente reclama que o produto não corresponde à foto, expressando decepção.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha atendido suas expectativas. Por favor, nos envie fotos do item para que possamos avaliar a situação e encontrar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 565,
+    "tokens_saida": 146,
+    "custo_usd": 0.00008617
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 283
+  }
+ },
+ {
+  "id": 129,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas um dos itens do pedido.",
+   "resposta_sugerida": "Lamentamos o transtorno. Verificaremos imediatamente a situação e entraremos em contato para resolver a entrega do produto faltante.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 115,
+    "custo_usd": 0.0000765
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 183
+  }
+ },
+ {
+  "id": 130,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "qualidade",
+   "urgencia": "media",
+   "resumo": "Cliente reclama do material de plástico frágil e de baixa qualidade, que rasgou facilmente.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha atendido às suas expectativas. Por favor, nos envie fotos do defeito para que possamos avaliar a melhor solução para você.",
+   "uso": {
+    "tokens_entrada": 593,
+    "tokens_saida": 130,
+    "custo_usd": 0.00008347
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 196
+  }
+ },
+ {
+  "id": 131,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente reclama de produto faltante e pede retorno.",
+   "resposta_sugerida": "Olá! Sentimos muito pela falha no envio. Estamos verificando o ocorrido e entraremos em contato em breve para resolver a situação. Agradecemos a compreensão.",
+   "uso": {
+    "tokens_entrada": 558,
+    "tokens_saida": 120,
+    "custo_usd": 0.00007785
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 371
+  }
+ },
+ {
+  "id": 132,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "media",
+   "resumo": "Pincéis chegaram amassados, não cabem na case e um veio descolado, apesar de descritos.",
+   "resposta_sugerida": "Lamentamos que os pincéis não atenderam às suas expectativas. Por favor, nos envie fotos dos itens danificados para que possamos avaliar a melhor solução.",
+   "uso": {
+    "tokens_entrada": 588,
+    "tokens_saida": 134,
+    "custo_usd": 0.0000843
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 338
+  }
+ },
+ {
+  "id": 133,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu camisa tamanho 7 em vez de 6.",
+   "resposta_sugerida": "Lamentamos o erro no envio. Por favor, nos informe seu número de pedido para que possamos providenciar a troca correta.",
+   "uso": {
+    "tokens_entrada": 565,
+    "tokens_saida": 105,
+    "custo_usd": 0.00007388
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 559
+  }
+ },
+ {
+  "id": 134,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "atraso",
+   "urgencia": "media",
+   "resumo": "Cliente pergunta se um parente pode retirar o pedido nos Correios após tentativa de entrega.",
+   "resposta_sugerida": "Olá! Se o seu pedido já está nos Correios, seu parente pode retirá‑lo apresentando um documento de identidade e o número de rastreamento. Caso precise de mais alguma informação, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 584,
+    "tokens_saida": 189,
+    "custo_usd": 0.0001005
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 919
+  }
+ },
+ {
+  "id": 135,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "preco",
+   "urgencia": "baixa",
+   "resumo": "Produto bom, mas frete considerado caro.",
+   "resposta_sugerida": "Agradecemos seu feedback e ficamos felizes que o produto atendeu suas expectativas. Entendemos sua preocupação com o custo do frete e estamos sempre buscando alternativas mais econômicas. Se precisar de mais alguma informação, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 155,
+    "custo_usd": 0.0000888
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 725
+  }
+ },
+ {
+  "id": 136,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente reclama que o produto não chegou e pede reembolso.",
+   "resposta_sugerida": "Lamentamos muito pela falha na entrega. Vamos investigar imediatamente e manteremos você informado sobre os próximos passos.",
+   "uso": {
+    "tokens_entrada": 561,
+    "tokens_saida": 104,
+    "custo_usd": 0.00007327
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 712
+  }
+ },
+ {
+  "id": 137,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia a maciez do tecido.",
+   "resposta_sugerida": "Agradecemos seu feedback! Ficamos felizes que tenha gostado do tecido. Qualquer outra necessidade, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 559,
+    "tokens_saida": 98,
+    "custo_usd": 0.00007132
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 195
+  }
+ },
+ {
+  "id": 138,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega rápida e produto satisfatório",
+   "resposta_sugerida": "Ficamos felizes que o tapete chegou antes do prazo e atendeu suas expectativas. Agradecemos pela preferência!",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 95,
+    "custo_usd": 0.00007065
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 571
+  }
+ },
+ {
+  "id": 139,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "atendimento",
+   "urgencia": "media",
+   "resumo": "Atendimento prestado, mas demora na resolução do problema.",
+   "resposta_sugerida": "Agradecemos por ter chamado nosso atendimento. Estamos trabalhando para resolver sua solicitação o mais breve possível. Caso precise de mais informações, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 121,
+    "custo_usd": 0.00007845
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 218
+  }
+ },
+ {
+  "id": 140,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente reclama da quantidade de papelada de propaganda enviada junto aos pedidos, pedindo redução e reforçando a importância da ecologia.",
+   "resposta_sugerida": "Agradecemos seu feedback e entendemos sua preocupação com o meio ambiente. Estamos avaliando formas de reduzir a papelada e garantir que nossos envios sejam mais sustentáveis.",
+   "uso": {
+    "tokens_entrada": 591,
+    "tokens_saida": 152,
+    "custo_usd": 0.00008993
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 535
+  }
+ },
+ {
+  "id": 141,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_errado",
+   "urgencia": "alta",
+   "resumo": "Cliente recebeu apenas a fruteira, faltou o cesto.",
+   "resposta_sugerida": "Lamentamos o ocorrido. Por favor, informe seu número de pedido para que possamos localizar e enviar o cesto o quanto antes.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 100,
+    "custo_usd": 0.0000723
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 191
+  }
+ },
+ {
+  "id": 142,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente expressa satisfação com o serviço.",
+   "resposta_sugerida": "Agradecemos seu feedback positivo! Estamos à disposição para continuar atendendo bem.",
+   "uso": {
+    "tokens_entrada": 553,
+    "tokens_saida": 115,
+    "custo_usd": 0.00007597
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 215
+  }
+ },
+ {
+  "id": 143,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente reclama falta de manual em português no relógio, apesar de ter manual em inglês e espanhol.",
+   "resposta_sugerida": "Olá! Lamentamos a inconveniência. Enviaremos imediatamente um manual em português para o seu endereço. Se precisar de mais alguma coisa, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 603,
+    "tokens_saida": 154,
+    "custo_usd": 0.00009142
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 452
+  }
+ },
+ {
+  "id": 144,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Tesoura chegou com defeito",
+   "resposta_sugerida": "Lamentamos o transtorno. Por favor, nos envie fotos do produto danificado para que possamos providenciar a substituição ou solução adequada.",
+   "uso": {
+    "tokens_entrada": 564,
+    "tokens_saida": 105,
+    "custo_usd": 0.0000738
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 614
+  }
+ },
+ {
+  "id": 145,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente relata atraso de 3 dias e falta de comunicação da loja.",
+   "resposta_sugerida": "Lamentamos o atraso e a falta de retorno. Estamos verificando o status do seu pedido e entraremos em contato em breve para atualizá-lo.",
+   "uso": {
+    "tokens_entrada": 627,
+    "tokens_saida": 110,
+    "custo_usd": 0.00008003
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 252
+  }
+ },
+ {
+  "id": 146,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Entrega super rápida e acima das expectativas.",
+   "resposta_sugerida": "Agradecemos pelo feedback positivo! Ficamos felizes em atender suas expectativas. Qualquer outra necessidade, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 562,
+    "tokens_saida": 99,
+    "custo_usd": 0.00007185
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 174
+  }
+ },
+ {
+  "id": 147,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "produto_danificado",
+   "urgencia": "alta",
+   "resumo": "Produto entregue com cabo de energia lacerado devido à embalagem inadequada e caixa rompida.",
+   "resposta_sugerida": "Lamentamos o ocorrido e agradecemos por nos informar. Vamos analisar a embalagem e tomar medidas para evitar futuros danos.",
+   "uso": {
+    "tokens_entrada": 593,
+    "tokens_saida": 117,
+    "custo_usd": 0.00007957
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 182
+  }
+ },
+ {
+  "id": 148,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "positivo",
+   "categoria": "elogio",
+   "urgencia": "baixa",
+   "resumo": "Cliente elogia produto e entrega rápida.",
+   "resposta_sugerida": "Agradecemos sua recomendação! Ficamos felizes que tenha ficado satisfeito com o produto e a entrega.",
+   "uso": {
+    "tokens_entrada": 560,
+    "tokens_saida": 95,
+    "custo_usd": 0.0000705
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 182
+  }
+ },
+ {
+  "id": 149,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "neutro",
+   "categoria": "outro",
+   "urgencia": "media",
+   "resumo": "Cliente pergunta como devolver o produto.",
+   "resposta_sugerida": "Olá! Para devolver seu produto, basta acessar a seção \"Meus Pedidos\" no aplicativo, selecionar o item e escolher a opção de devolução. Se precisar de ajuda adicional, estamos à disposição.",
+   "uso": {
+    "tokens_entrada": 557,
+    "tokens_saida": 153,
+    "custo_usd": 0.00008768
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 564
+  }
+ },
+ {
+  "id": 150,
+  "modelo": "openai/gpt-oss-20b",
+  "prompt": "v2",
+  "llm": {
+   "sentimento": "negativo",
+   "categoria": "atraso",
+   "urgencia": "alta",
+   "resumo": "Cliente não recebeu o produto e teve que retirá-lo nos correios, questionando a vantagem de comprar online.",
+   "resposta_sugerida": "Lamentamos que o produto não tenha chegado até você. Por favor, informe o número do pedido para que possamos investigar e encontrar uma solução adequada.",
+   "uso": {
+    "tokens_entrada": 585,
+    "tokens_saida": 135,
+    "custo_usd": 0.00008438
+   },
+   "provedor": "groq",
+   "modelo": "openai/gpt-oss-20b",
+   "prompt": "v2",
+   "tempo_ms": 467
+  }
+ }
+]
