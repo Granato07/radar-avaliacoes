@@ -3,11 +3,13 @@ import { z } from 'zod';
 import { classificar } from './classico.js';
 import { analisarComLLM, ErroLLM, llmConfigurado, modelosDisponiveis } from './llm.js';
 import metricas from './modelo/metricas.json' with { type: 'json' };
+import avaliacao from './modelo/avaliacao.json' with { type: 'json' };
 
 export const esquemaEntrada = z.object({
   texto: z.string().trim().min(3, 'texto muito curto').max(1000, 'texto muito longo (máx. 1000 caracteres)'),
   modo: z.enum(['classico', 'llm', 'ambos', 'triagem']).default('ambos'),
   modelo: z.string().max(80).optional(),
+  prompt: z.enum(['v1', 'v2']).optional(),
 });
 
 // Triagem: o modelo clássico decide sozinho quando está muito confiante de que a avaliação é positiva
@@ -63,13 +65,18 @@ export function criarApp(fetcher: typeof fetch = fetch) {
     res.json(metricas);
   });
 
+  // Resultado da avaliação com juiz (gerado por ml/juiz/analisar.py), para o dashboard
+  app.get('/api/avaliacao', (_req, res) => {
+    res.json(avaliacao);
+  });
+
   app.post('/api/analisar', criarLimitador(), async (req, res) => {
     const entrada = esquemaEntrada.safeParse(req.body);
     if (!entrada.success) {
       res.status(400).json({ erro: 'Entrada inválida', detalhes: entrada.error.issues.map((i) => i.message) });
       return;
     }
-    const { texto, modo, modelo } = entrada.data;
+    const { texto, modo, modelo, prompt } = entrada.data;
     const resposta: Record<string, unknown> = { texto };
 
     let classico: ReturnType<typeof classificar> | undefined;
@@ -95,7 +102,7 @@ export function criarApp(fetcher: typeof fetch = fetch) {
     if (chamarLLM) {
       const inicio = performance.now();
       try {
-        resposta.llm = { ...(await analisarComLLM(texto, fetcher, modelo)), tempo_ms: Math.round(performance.now() - inicio) };
+        resposta.llm = { ...(await analisarComLLM(texto, fetcher, modelo, prompt)), tempo_ms: Math.round(performance.now() - inicio) };
       } catch (e) {
         const erro = e instanceof ErroLLM ? e : new ErroLLM('Falha ao consultar o LLM');
         if (modo === 'llm') {
