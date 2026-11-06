@@ -1,0 +1,606 @@
+{
+ "juiz": "Claude Opus 5.5 (Anthropic)",
+ "metodo": "leitura cega do texto (sem nota e sem previsões), rubrica em rubrica.md",
+ "rotulos": {
+  "1": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "2": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "3": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "4": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "5": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "6": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "7": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "8": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "9": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "10": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "11": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "12": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "13": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "14": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "15": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "16": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "17": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "18": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "19": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "20": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "21": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "22": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "23": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "24": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "25": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "26": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "27": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "28": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "29": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "30": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "31": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "32": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "33": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "34": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "35": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "36": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "37": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "38": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "39": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "40": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "41": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "42": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "43": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "44": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "45": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "46": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "47": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "48": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "49": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "50": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "51": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "52": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "53": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "54": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "55": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "56": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "57": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "58": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "59": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "60": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "61": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "62": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "63": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "64": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "65": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "66": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "67": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "68": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "69": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "70": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "71": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "72": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "73": {
+   "juiz": "positivo",
+   "confianca": "baixa"
+  },
+  "74": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "75": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "76": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "77": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "78": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "79": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "80": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "81": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "82": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "83": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "84": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "85": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "86": {
+   "juiz": "positivo",
+   "confianca": "baixa"
+  },
+  "87": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "88": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "89": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "90": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "91": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "92": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "93": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "94": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "95": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "96": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "97": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "98": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "99": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "100": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "101": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "102": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "103": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "104": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "105": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "106": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "107": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "108": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "109": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "110": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "111": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "112": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "113": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "114": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "115": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "116": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "117": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "118": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "119": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "120": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "121": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "122": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "123": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "124": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "125": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "126": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "127": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "128": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "129": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "130": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "131": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "132": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "133": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "134": {
+   "juiz": "neutro",
+   "confianca": "alta"
+  },
+  "135": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "136": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "137": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "138": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "139": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "140": {
+   "juiz": "neutro",
+   "confianca": "baixa"
+  },
+  "141": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "142": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "143": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "144": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "145": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "146": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "147": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  },
+  "148": {
+   "juiz": "positivo",
+   "confianca": "alta"
+  },
+  "149": {
+   "juiz": "negativo",
+   "confianca": "baixa"
+  },
+  "150": {
+   "juiz": "negativo",
+   "confianca": "alta"
+  }
+ }
+}
