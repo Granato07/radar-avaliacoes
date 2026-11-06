@@ -193,3 +193,16 @@ describe('tokens, custo, escolha de modelo e triagem', () => {
     expect(res.body.llm.categoria).toBe('atraso');
   });
 });
+
+describe('versões do prompt', () => {
+  it('envia o prompt v2 quando pedido e informa a versão usada', async () => {
+    process.env.GROQ_API_KEY = 'chave-groq';
+    const fetcher = vi.fn(
+      async () => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(llmValido) } }] })),
+    ) as unknown as typeof fetch;
+    const res = await request(criarApp(fetcher)).post('/api/analisar').send({ texto: 'Bom, mas atrasou', modo: 'llm', prompt: 'v2' });
+    expect(res.body.llm.prompt).toBe('v2');
+    const corpo = JSON.parse((fetcher as unknown as { mock: { calls: [string, RequestInit][] } }).mock.calls[0][1].body as string);
+    expect(corpo.messages[0].content).toContain('PREDOMINA');
+  });
+});
