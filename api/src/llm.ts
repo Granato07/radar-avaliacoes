@@ -57,7 +57,7 @@ ${URGENCIA}
 ${FINAL}`,
 } as const;
 export type VersaoPrompt = keyof typeof PROMPTS;
-export const PROMPT_PADRAO: VersaoPrompt = 'v1';
+export const PROMPT_PADRAO: VersaoPrompt = 'v2'; // v2 venceu na avaliação com juiz (ml/juiz)
 
 export class ErroLLM extends Error {
   constructor(
